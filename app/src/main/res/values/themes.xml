@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.TestProject" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.TestProject" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -13,4 +13,17 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="text_default">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <!--    메인화면 리스트 텍스트    -->
+    <style name="text_main_list" parent="text_default">
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@color/purple_200</item>
+        <item name="android:gravity">center</item>
+    </style>
+
 </resources>
