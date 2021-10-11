@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TestProject">
-        <activity android:name=".MainActivity">
+        <activity android:name=".viewtest.textinputlayout.TextInputLayoutActivity"></activity>
+        <activity android:name=".viewtest.ViewTestActivity" />
+        <activity android:name=".notification.NotificationActivity" />
+        <activity android:name=".main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
