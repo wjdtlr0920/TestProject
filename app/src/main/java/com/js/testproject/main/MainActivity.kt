@@ -1,14 +1,13 @@
 package com.js.testproject.main
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.js.testproject.R
-import com.js.testproject.main.adapter.MainAdapter
+import com.js.testproject.adapter.ActivityOpenAdapter
 import com.js.testproject.databinding.ActivityMainBinding
-import com.js.testproject.main.data.model.MainRecyclerModel
 import com.js.testproject.notification.NotificationActivity
+import com.js.testproject.permission.PermissionActivity
 import com.js.testproject.viewtest.ViewTestActivity
 
 class MainActivity : AppCompatActivity() {
@@ -22,8 +21,8 @@ class MainActivity : AppCompatActivity() {
         val classList = arrayListOf<Class<*>>()
         classList.add(NotificationActivity::class.java)
         classList.add(ViewTestActivity::class.java)
+        classList.add(PermissionActivity::class.java)
 
-        binding.rvMain.adapter = MainAdapter(this, classList)
-
+        binding.rvMain.adapter = ActivityOpenAdapter(this, classList)
     }
 }

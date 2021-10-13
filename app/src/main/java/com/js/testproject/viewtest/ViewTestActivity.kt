@@ -4,9 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.js.testproject.R
+import com.js.testproject.adapter.ActivityOpenAdapter
 import com.js.testproject.databinding.ActivityViewTestBinding
 import com.js.testproject.viewtest.textinputlayout.TextInputLayoutActivity
-import com.js.testproject.viewtest.textinputlayout.adapter.ViewTestAdapter
 
 class ViewTestActivity : AppCompatActivity() {
 
@@ -19,9 +19,6 @@ class ViewTestActivity : AppCompatActivity() {
         val classList = arrayListOf<Class<*>>()
         classList.add(TextInputLayoutActivity::class.java)
 
-        binding.recyclerview.adapter = ViewTestAdapter(this, classList)
-
-
-
+        binding.recyclerview.adapter = ActivityOpenAdapter(this, classList)
     }
 }

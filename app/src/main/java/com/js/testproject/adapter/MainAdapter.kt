@@ -1,21 +1,20 @@
-package com.js.testproject.main.adapter
+package com.js.testproject.adapter
 
+import com.js.testproject.databinding.AdapterActivityOpenBinding
+import java.util.*
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.js.testproject.databinding.AdapterMainBinding
 
-class MainAdapter(private val ctx : Context, private val dataSet: ArrayList<Class<*>>) :
-    RecyclerView.Adapter<MainAdapter.ViewHolder>() {
+class ActivityOpenAdapter(private val ctx : Context, private val dataSet: ArrayList<Class<*>>) :
+    RecyclerView.Adapter<ActivityOpenAdapter.ViewHolder>() {
 
-    inner class ViewHolder(binding: AdapterMainBinding) : RecyclerView.ViewHolder(binding.root) {
-        val binding = binding
-    }
+    inner class ViewHolder(val binding: AdapterActivityOpenBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = AdapterMainBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val view = AdapterActivityOpenBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
         return ViewHolder(view)
     }

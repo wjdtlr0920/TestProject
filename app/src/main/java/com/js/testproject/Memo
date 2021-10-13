@@ -1,0 +1,44 @@
+
+
+-----------------------Build-----------------------
+
+//            이거 휴대폰 정보 가져오는건데 나중에 로그로 다 찍어서 저장해놓자
+//            Logger.d("test")
+//            Log.d("Build","${Build.BOARD}")
+//            Log.d("Build","${Build.DEVICE}")
+//            Log.d("Build","${Build.DISPLAY}")
+//            Log.d("Build","${Build.ID}")
+//            Log.d("Build","${Build.MODEL}")
+//            Log.d("Build","${Build.CPU_ABI}")
+//            Log.d("Build","${Build.PRODUCT}")
+//            Log.d("Build","${Build.VERSION.SDK_INT}")
+//            Log.d("Build","${Build.VERSION_CODES.R}")
+
+-----------------------Permission-----------------------
+
+Manifest.permission --> 매니페스트 안에
+
+메니페스트에 특정권한 최대 범위 지정
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"   android:maxSdkVersion="28"/>
+
+1. 조건문을 통한 분기 처리
+
+2. @TargetApi
+Lint에러를 발생시키지 않는 역할만 함(minSdkVersion보다 높은 version에 선언된 API 사용할 경우 Lint에러 발생)
+
+(Lint는 안드로이드 버전별로 어떤 API를 사용하는지에 대한 정보를 가지고 있음)
+
+버전에 상관없이 호출 및 동작이 되며, 버전에 따라 에러가 나는 API가 있다면 "1. 조건문을 통한 분기 처리"를 사용자가 직접 구현하여 에러를 방지 해야 함.
+
+3. @RequireApi
+minSdkVersion이 지정한 버전보다 낮을 경우 바로 호출시에는 컴파일 에러 발생
+
+checkSelfPermission했을때 결과값
+PackageManager.PERMISSION_DENIED
+PackageManager.PERMISSION_GRANTED
+
+안드로이드 권한에 대한 기본 설명되어 있는 블로그
+https://copycoding.tistory.com/357
+
+안드로이드11 권한 관련 설명되어 있는 블로그
+https://medium.com/kenneth-android/android-%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-11-%ED%94%84%EB%A6%AC%EB%B7%B0-%EB%B0%8F-%EB%B3%80%EA%B2%BD-%EC%82%AC%ED%95%AD-%EA%B0%84%EB%8B%A8%ED%95%98%EA%B2%8C-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0-9241d6408cd4
