@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         classList.add(ViewTestActivity::class.java)
         classList.add(PermissionActivity::class.java)
 
+
         binding.rvMain.adapter = ActivityOpenAdapter(this, classList)
     }
 }
