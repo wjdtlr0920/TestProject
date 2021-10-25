@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <!--  TextInputLayout Style Custom하기 https://seosh817.tistory.com/93  -->
+  <style name="CustomTextInputLayoutFilledBox" parent="Widget.MaterialComponents.TextInputLayout.FilledBox"></style>
+
+  <style name="CustomTextInputLayoutOutlineBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    <item name="boxStrokeColor">#ff0000</item>
+  </style>
+
+  <style name="CustomTextInputLayout">
+    <item name="boxStrokeColor">#ff0000</item>
+
+  </style>
+
+<!--  <style name="CustomTextInputEditText">-->
+<!--    <item name="boxBackgroundColor">#ff0000</item>-->
+
+<!--  </style>-->
+
+  <!--  EditText 색 변경항목 정리 https://pluu.github.io/blog/android/2016/10/31/editText-color/  -->
+  <style name="CustomEditText">
+<!--    <item name="android:background">@android:color/transparent</item>-->
+    <!--  포커스 받기 전 밑줄  -->
+    <item name="colorControlNormal">#ff0000</item>
+    <!--  포커스 받았을 때 밑줄  -->
+    <item name="colorControlActivated">#00ff00</item>
+    <!--  텍스트 긁었을때 색  -->
+    <item name="android:textColorHighlight">#0000ff</item>
+    <!--  텍스트 힌트 색  -->
+    <item name="android:textColorHint">#00ffff</item>
+    <!--  커서 색 Drwable 지정되지만, Color로도 지정이 된다는데...근데 왜 지정이 안되지? -->
+    <item name="android:textCursorDrawable">@color/teal_700</item>
+  </style>
+</resources>

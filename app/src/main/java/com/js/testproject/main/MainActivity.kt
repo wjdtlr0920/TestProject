@@ -9,6 +9,8 @@ import com.js.testproject.databinding.ActivityMainBinding
 import com.js.testproject.notification.NotificationActivity
 import com.js.testproject.permission.PermissionActivity
 import com.js.testproject.viewtest.ViewTestActivity
+import com.orhanobut.logger.AndroidLogAdapter
+import com.orhanobut.logger.Logger
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,5 +27,6 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.rvMain.adapter = ActivityOpenAdapter(this, classList)
+
     }
 }

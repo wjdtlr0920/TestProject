@@ -1,24 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".viewtest.textinputlayout.TextInputLayoutActivity">
 
-    <com.google.android.material.textfield.TextInputLayout
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        >
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="test"
-            />
+            android:hint="힌트 올리기" />
+      </com.google.android.material.textfield.TextInputLayout>
 
+      <com.google.android.material.textfield.TextInputLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:counterEnabled="true"
+          app:counterMaxLength="10">
 
-    </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="글자 수 세기" />
+      </com.google.android.material.textfield.TextInputLayout>
 
+      <com.google.android.material.textfield.TextInputLayout
+          android:id="@+id/input_error"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="에러 메세지 표기" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:id="@+id/input_password"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="패스워드 보이기"
+            android:inputType="textPassword" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:id="@+id/input_clear_text"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:endIconMode="clear_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_clear_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="글자 지우기" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:id="@+id/input_custom"
+          style="@style/CustomTextInputLayout"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_custom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="머터리얼 Custom" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:id="@+id/input_filled_box"
+          style="@style/CustomTextInputLayoutFilledBox"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_filled_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="머터리얼 FilledBox 스타일" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:id="@+id/input_outline_box"
+          style="@style/CustomTextInputLayoutOutlineBox"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_outline_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="머터리얼 OutLineBox 스타일" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <androidx.appcompat.widget.AppCompatEditText
+          style="@style/CustomEditText"
+          android:hint="힌트"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:theme="@style/CustomEditText" />
+
+    </LinearLayout>
+  </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
