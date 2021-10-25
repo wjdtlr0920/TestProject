@@ -13,7 +13,8 @@ class StackActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_stack)
+        binding = ActivityStackBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
 

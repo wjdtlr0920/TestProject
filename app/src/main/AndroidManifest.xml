@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TestProject">
-        <activity android:name=".stack.StackActivity"></activity>
+        <activity android:name=".stack.standard.Standard1Activity"></activity>
+        <activity android:name=".stack.StackActivity" />
         <activity android:name=".permission.PermissionActivity" />
         <activity android:name=".viewtest.textinputlayout.TextInputLayoutActivity" />
         <activity android:name=".viewtest.ViewTestActivity" />

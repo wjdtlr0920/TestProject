@@ -8,6 +8,7 @@ import com.js.testproject.adapter.ActivityOpenAdapter
 import com.js.testproject.databinding.ActivityMainBinding
 import com.js.testproject.notification.NotificationActivity
 import com.js.testproject.permission.PermissionActivity
+import com.js.testproject.stack.StackActivity
 import com.js.testproject.viewtest.ViewTestActivity
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         classList.add(NotificationActivity::class.java)
         classList.add(ViewTestActivity::class.java)
         classList.add(PermissionActivity::class.java)
-
+        classList.add(StackActivity::class.java)
 
         binding.rvMain.adapter = ActivityOpenAdapter(this, classList)
 

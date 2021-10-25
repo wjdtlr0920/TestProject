@@ -6,40 +6,141 @@
     android:layout_height="match_parent"
     tools:context=".stack.StackActivity">
 
-    <TextView
-        android:id="@+id/standard"
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        style="@style/text_main_list"
-        android:text="Standard"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/single_top"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        style="@style/text_main_list"
-        android:layout_marginTop="10dp"
-        android:text="SingleTop"
-        app:layout_constraintTop_toBottomOf="@id/standard" />
+      <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/standard1"
+          style="@style/text_main_list"
+          android:layout_width="match_parent"
+          android:layout_height="70dp"
+          android:text="Standard1" />
 
-    <TextView
-        android:id="@+id/single_task"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        style="@style/text_main_list"
-        android:text="SingleTask"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/single_top" />
+      <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/standard2"
+          style="@style/text_main_list"
+          android:layout_width="match_parent"
+          android:layout_height="70dp"
+          android:text="Standard2"
+          android:layout_marginTop="10dp" />
 
-    <TextView
-        android:id="@+id/single_instance"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        style="@style/text_main_list"
-        android:text="SingleInstance"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/single_task" />
+      <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/standard3"
+          style="@style/text_main_list"
+          android:layout_width="match_parent"
+          android:layout_height="70dp"
+          android:text="Standard3"
+          android:layout_marginTop="10dp" />
 
+      <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/standard4"
+          style="@style/text_main_list"
+          android:layout_width="match_parent"
+          android:layout_height="70dp"
+          android:text="Standard4"
+          android:layout_marginTop="10dp" />
 
+      <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/single_top1"
+          style="@style/text_main_list"
+          android:layout_width="match_parent"
+          android:layout_height="70dp"
+          android:layout_marginTop="10dp"
+          android:text="SingleTop1" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/single_top2"
+          style="@style/text_main_list"
+          android:layout_width="match_parent"
+          android:layout_height="70dp"
+          android:layout_marginTop="10dp"
+          android:text="SingleTop2" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/single_top3"
+          style="@style/text_main_list"
+          android:layout_width="match_parent"
+          android:layout_height="70dp"
+          android:layout_marginTop="10dp"
+          android:text="SingleTop3" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/single_top4"
+          style="@style/text_main_list"
+          android:layout_width="match_parent"
+          android:layout_height="70dp"
+          android:layout_marginTop="10dp"
+          android:text="SingleTop4" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/single_task1"
+          style="@style/text_main_list"
+          android:layout_width="match_parent"
+          android:layout_height="70dp"
+          android:layout_marginTop="10dp"
+          android:text="SingleTask1" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/single_task2"
+          style="@style/text_main_list"
+          android:layout_width="match_parent"
+          android:layout_height="70dp"
+          android:layout_marginTop="10dp"
+          android:text="SingleTask2" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/single_task3"
+          style="@style/text_main_list"
+          android:layout_width="match_parent"
+          android:layout_height="70dp"
+          android:layout_marginTop="10dp"
+          android:text="SingleTask3" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/single_task4"
+          style="@style/text_main_list"
+          android:layout_width="match_parent"
+          android:layout_height="70dp"
+          android:layout_marginTop="10dp"
+          android:text="SingleTask4" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/single_instance1"
+          style="@style/text_main_list"
+          android:layout_width="match_parent"
+          android:layout_height="70dp"
+          android:layout_marginTop="10dp"
+          android:text="SingleInstance1" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/single_instance2"
+          style="@style/text_main_list"
+          android:layout_width="match_parent"
+          android:layout_height="70dp"
+          android:layout_marginTop="10dp"
+          android:text="SingleInstance2" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/single_instance3"
+          style="@style/text_main_list"
+          android:layout_width="match_parent"
+          android:layout_height="70dp"
+          android:layout_marginTop="10dp"
+          android:text="SingleInstance3" />
+
+      <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/single_instance4"
+          style="@style/text_main_list"
+          android:layout_width="match_parent"
+          android:layout_height="70dp"
+          android:layout_marginTop="10dp"
+          android:text="SingleInstance4" />
+    </LinearLayout>
+  </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
