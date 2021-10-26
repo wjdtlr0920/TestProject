@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         classList.add(StackActivity::class.java)
 
         binding.rvMain.adapter = ActivityOpenAdapter(this, classList)
+        
 
     }
 }
