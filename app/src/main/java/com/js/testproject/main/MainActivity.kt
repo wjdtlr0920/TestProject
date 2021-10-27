@@ -27,8 +27,9 @@ class MainActivity : AppCompatActivity() {
         classList.add(PermissionActivity::class.java)
         classList.add(StackActivity::class.java)
 
-        binding.rvMain.adapter = ActivityOpenAdapter(this, classList)
         
+        binding.rvMain.adapter = ActivityOpenAdapter(this, classList)
+
 
     }
 }
