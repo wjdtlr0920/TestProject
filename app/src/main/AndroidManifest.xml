@@ -13,7 +13,7 @@
       android:supportsRtl="true"
       android:theme="@style/Theme.TestProject">
     <activity android:name=".file.FileTestActivity"></activity>
-    <activity android:name=".stack.standard.Standard1Activity" />
+    <activity android:name=".mediastore.MediaStoreActivity"></activity>
     <activity android:name=".stack.StackActivity" />
     <activity android:name=".permission.PermissionActivity" />
     <activity android:name=".viewtest.textinputlayout.TextInputLayoutActivity" />

@@ -7,12 +7,11 @@ import com.js.testproject.R
 import com.js.testproject.adapter.ActivityOpenAdapter
 import com.js.testproject.databinding.ActivityMainBinding
 import com.js.testproject.file.FileTestActivity
+import com.js.testproject.mediastore.MediaStoreActivity
 import com.js.testproject.notification.NotificationActivity
 import com.js.testproject.permission.PermissionActivity
 import com.js.testproject.stack.StackActivity
 import com.js.testproject.viewtest.ViewTestActivity
-import com.orhanobut.logger.AndroidLogAdapter
-import com.orhanobut.logger.Logger
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,8 +27,8 @@ class MainActivity : AppCompatActivity() {
         classList.add(PermissionActivity::class.java)
         classList.add(StackActivity::class.java)
         classList.add(FileTestActivity::class.java)
+        classList.add(MediaStoreActivity::class.java)
 
         binding.rvMain.adapter = ActivityOpenAdapter(this, classList)
-
     }
 }
