@@ -12,8 +12,11 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:supportsRtl="true"
       android:theme="@style/Theme.TestProject">
-    <activity android:name=".file.FileTestActivity"></activity>
-    <activity android:name=".mediastore.MediaStoreActivity"></activity>
+    <activity android:name=".fastcampus.rotto.LottoActivity"></activity>
+    <activity android:name=".util.random.RandomActivity" />
+    <activity android:name=".util.UtilActivity" />
+    <activity android:name=".file.FileTestActivity" />
+    <activity android:name=".mediastore.MediaStoreActivity" />
     <activity android:name=".stack.StackActivity" />
     <activity android:name=".permission.PermissionActivity" />
     <activity android:name=".viewtest.textinputlayout.TextInputLayoutActivity" />
