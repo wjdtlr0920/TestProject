@@ -50,6 +50,19 @@
       </com.google.android.material.textfield.TextInputLayout>
 
       <com.google.android.material.textfield.TextInputLayout
+          android:id="@+id/input_error_gravity_center"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_error_gravity_center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="에러 메세지 중앙정렬" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
           android:id="@+id/input_password"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
@@ -74,6 +87,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="글자 지우기" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:id="@+id/input_clear_text_gravity_center"
+          style="@style/CustomTextInputLayout"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:endIconMode="clear_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_clear_text_gravity_center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="글자 지우기 중앙 정렬" />
       </com.google.android.material.textfield.TextInputLayout>
 
       <com.google.android.material.textfield.TextInputLayout

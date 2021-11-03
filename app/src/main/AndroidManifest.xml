@@ -12,8 +12,9 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:supportsRtl="true"
       android:theme="@style/Theme.TestProject">
-    <activity android:name=".file.FileTestActivity"></activity>
-    <activity android:name=".mediastore.MediaStoreActivity"></activity>
+    <activity android:name=".viewtest.etc.EtcActivity"></activity>
+    <activity android:name=".file.FileTestActivity" />
+    <activity android:name=".mediastore.MediaStoreActivity" />
     <activity android:name=".stack.StackActivity" />
     <activity android:name=".permission.PermissionActivity" />
     <activity android:name=".viewtest.textinputlayout.TextInputLayoutActivity" />

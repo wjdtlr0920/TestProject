@@ -20,6 +20,7 @@ class TextInputLayoutActivity : AppCompatActivity() {
 
         // 에러 메세지 표기
         binding.editError.addTextChangedListener(watcher)
+        binding.editErrorGravityCenter.addTextChangedListener(watcher2)
 
 
     }
@@ -33,6 +34,20 @@ class TextInputLayoutActivity : AppCompatActivity() {
             else {
 //                아래 두가지 다 사용가능
                 binding.inputError.error = null
+//                binding.inputError.error = ""
+            }
+        }
+    }
+
+
+    // 에러 메세지 표기
+    private val watcher2 = object : TextWatcherAdapter() {
+        override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+            if (s.isEmpty())
+                binding.editErrorGravityCenter.error = "글자를 입력해주세요"
+            else {
+//                아래 두가지 다 사용가능
+                binding.editErrorGravityCenter.error = null
 //                binding.inputError.error = ""
             }
         }
