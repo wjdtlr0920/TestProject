@@ -12,6 +12,7 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:supportsRtl="true"
       android:theme="@style/Theme.TestProject">
+    <activity android:name=".util.calendar.CalendarActivity"></activity>
     <activity android:name=".viewtest.etc.EtcActivity" />
     <activity android:name=".fastcampus.rotto.LottoActivity" />
     <activity android:name=".util.random.RandomActivity" />
