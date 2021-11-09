@@ -36,5 +36,7 @@ class MainActivity : AppCompatActivity() {
         classList.add(ResultActivity::class.java)
 
         binding.rvMain.adapter = ActivityOpenAdapter(this, classList)
+
+        
     }
 }
