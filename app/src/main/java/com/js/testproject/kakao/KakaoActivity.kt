@@ -14,6 +14,5 @@ class KakaoActivity : AppCompatActivity() {
     setContentView(binding.root)
 
 
-
   }
 }
