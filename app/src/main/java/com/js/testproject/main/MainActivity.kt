@@ -37,6 +37,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.rvMain.adapter = ActivityOpenAdapter(this, classList)
 
-        
+
+        val test = "asdasdasd"
+
+
+
     }
 }
