@@ -29,4 +29,6 @@ class ResultActivity : AppCompatActivity() {
     Logger.e("$requestCode $resultCode")
   }
 
+
+  
 }
