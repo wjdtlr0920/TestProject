@@ -37,8 +37,5 @@ class MainActivity : AppCompatActivity() {
 
         binding.rvMain.adapter = ActivityOpenAdapter(this, classList)
 
-
-        val tessssstttttt = "asdasdasd"
-
     }
 }
