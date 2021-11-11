@@ -8,24 +8,24 @@
 
 
   <LinearLayout
-      android:layout_width="100dp"
-      android:layout_height="wrap_content"
-      android:orientation="vertical">
+      android:layout_width="120dp"
+      android:layout_height="90dp"
+      android:orientation="vertical"
+      android:gravity="right"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/ellipe_test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:ellipsize="none"
+        android:ellipsize="end"
         android:focusable="false"
-        android:hyphenationFrequency="none"
+        android:gravity="right"
         android:lines="1"
-        android:maxLines="2"
-        android:text="ellipe_tasdasdasdest"
-        android:textSize="23dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:maxLines="1"
+        android:text=" 테스트중 이빈다"
+        android:textSize="23dp" />
 
   </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

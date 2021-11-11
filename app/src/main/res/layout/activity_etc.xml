@@ -36,7 +36,7 @@
       android:layout_height="70dp"
       android:text="ButtonAnimation"
       android:layout_margin="10dp"
-      app:layout_constraintStart_toEndOf="@id/button_animation"
+      app:layout_constraintStart_toEndOf="@id/button_test"
       app:layout_constraintEnd_toStartOf="@id/button_test3"
       app:layout_constraintTop_toTopOf="parent" />
 
