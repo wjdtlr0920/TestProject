@@ -7,25 +7,204 @@
     tools:context=".viewtest.textview.TextViewActivity">
 
 
-  <LinearLayout
-      android:layout_width="100dp"
-      android:layout_height="wrap_content"
-      android:orientation="vertical">
+  <ScrollView
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/ellipe_test"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:ellipsize="none"
-        android:focusable="false"
-        android:hyphenationFrequency="none"
-        android:lines="1"
-        android:maxLines="2"
-        android:text="ellipe_tasdasdasdest"
-        android:textSize="23dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical">
 
-  </LinearLayout>
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="5dp"
+          android:gravity="center"
+          android:text="뷰 길이 넘어갈떄"
+          android:textSize="23dp"
+          android:textStyle="bold" />
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ellipe_default_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:lines="1"
+            android:maxLines="2"
+            android:text="default_test_default_test_default_test_default_test_default_test"
+            android:textSize="23dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ellipe_start_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ellipsize="start"
+            android:lines="1"
+            android:maxLines="2"
+            android:text="ellipe_start_test_ellipe_start_test_ellipe_start_test_ellipe_start_test"
+            android:textSize="23dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ellipe_middle_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ellipsize="middle"
+            android:lines="1"
+            android:maxLines="2"
+            android:text="ellipe_middle_test_ellipe_middle_test_ellipe_middle_test_ellipe_middle_test"
+            android:textSize="23dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ellipe_start_test" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ellipe_end_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:maxLines="2"
+            android:text="ellipe_end_test_ellipe_end_test_ellipe_end_test_ellipe_end_test_ellipe_end_test"
+            android:textSize="23dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ellipe_start_test" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ellipe_none_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ellipsize="none"
+            android:lines="1"
+            android:maxLines="2"
+            android:text="ellipe_none_test_ellipe_none_test_ellipe_none_test_ellipe_none_test_ellipe_none_test_"
+            android:textSize="23dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ellipe_start_test" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ellipe_marquee_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:text="ellipe_marquee_test_ellipe_marquee_test_ellipe_marquee_test_ellipe_marquee_test_ellipe_marquee_test"
+            android:textSize="23dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ellipe_start_test" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="autoLink Test"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:autoLink="web"
+            android:text="naver.com daum.net, naver.com, daum.net, test@naver.com"
+            android:textSize="23dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:autoLink="web|phone|email"
+            android:text="naver.com daum.net, naver.com, daum.net, test@naver.com, 12345678901"
+            android:textSize="23dp" />
+      </LinearLayout>
+
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="알파벳 대소문자 자동구분\n(capitalize 디플 \ninputType 사용해야하는데 왜 안먹지 )"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:inputType="textCapWords"
+            android:text="asdasdㅂㄷㅈㅂㅈASDASD123456"
+            android:textSize="23dp" />
+      </LinearLayout>
+
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="DrawableTint"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:drawableStart="@drawable/ic_launcher_foreground"
+            android:drawableTop="@drawable/ic_launcher_foreground"
+            android:drawableEnd="@drawable/ic_launcher_foreground"
+            android:drawableBottom="@drawable/ic_launcher_foreground"
+            android:drawableTint="#55ff1111"
+            android:drawableTintMode="multiply"
+            android:editable="true"
+            android:letterSpacing="0.2"
+            android:lineSpacingExtra="10dp"
+            android:shadowColor="@color/black"
+            android:shadowDx="100.0"
+            android:shadowDy="100.0"
+            android:shadowRadius="10.0"
+            android:text="글자간격조정~드로어블추가~그림자 추가~"
+            android:textSize="23dp" />
+      </LinearLayout>
+    </LinearLayout>
+  </ScrollView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

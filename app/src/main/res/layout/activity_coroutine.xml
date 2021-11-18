@@ -6,4 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".coroutine.CoroutineActivity">
 
+  <Button
+      android:id="@+id/button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Button"
+      tools:layout_editor_absoluteX="224dp"
+      tools:layout_editor_absoluteY="305dp" />
+
+  <Button
+      android:id="@+id/button2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Butto"
+      android:textColor="@color/black"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      tools:layout_editor_absoluteX="224dp"
+      tools:layout_editor_absoluteY="305dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

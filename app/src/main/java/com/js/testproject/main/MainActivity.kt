@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.js.testproject.R
 import com.js.testproject.adapter.ActivityOpenAdapter
+import com.js.testproject.coroutine.CoroutineActivity
 import com.js.testproject.databinding.ActivityMainBinding
 import com.js.testproject.fastcampus.rotto.LottoActivity
 import com.js.testproject.file.FileTestActivity
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         classList.add(UtilActivity::class.java)
         classList.add(LottoActivity::class.java)
         classList.add(ResultActivity::class.java)
+        classList.add(CoroutineActivity::class.java)
 
         binding.rvMain.adapter = ActivityOpenAdapter(this, classList)
 

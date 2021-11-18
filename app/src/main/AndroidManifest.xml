@@ -12,7 +12,8 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:supportsRtl="true"
       android:theme="@style/Theme.TestProject">
-    <activity android:name=".viewtest.textview.TextViewActivity"></activity>
+    <activity android:name=".coroutine.CoroutineActivity"></activity>
+    <activity android:name=".viewtest.textview.TextViewActivity" />
     <activity android:name=".kakao.KakaoActivity" />
     <activity android:name=".result.ResultActivity" />
     <activity android:name=".util.calendar.CalendarActivity" />

@@ -20,7 +20,7 @@
 
   <androidx.appcompat.widget.AppCompatTextView
       android:id="@+id/button_animation"
-      android:background="#aa666666"
+      android:background="#66ffffff"
       android:layout_width="0dp"
       android:layout_height="0dp"
       app:layout_constraintTop_toTopOf="@id/button_test"
@@ -36,7 +36,7 @@
       android:layout_height="70dp"
       android:text="ButtonAnimation"
       android:layout_margin="10dp"
-      app:layout_constraintStart_toEndOf="@id/button_animation"
+      app:layout_constraintStart_toEndOf="@id/button_test"
       app:layout_constraintEnd_toStartOf="@id/button_test3"
       app:layout_constraintTop_toTopOf="parent" />
 

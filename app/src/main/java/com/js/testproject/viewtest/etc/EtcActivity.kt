@@ -16,10 +16,10 @@ class EtcActivity : AppCompatActivity() {
     setContentView(binding.root)
 
     binding.buttonAnimation.setOnClickListener {
-      val startScaleX = ObjectAnimator.ofFloat(binding.buttonAnimation, "scaleX", 0.1f, 1f)
+      val startScaleX = ObjectAnimator.ofFloat(binding.buttonAnimation, "scaleX", 0.5f, 1f)
 //      startScaleX.start()
 
-      val startScaleY = ObjectAnimator.ofFloat(binding.buttonAnimation, "scaleY", 0.1f, 1f)
+      val startScaleY = ObjectAnimator.ofFloat(binding.buttonAnimation, "scaleY", 0.5f, 1f)
 //      startScaleX.start()
 
 //      val startScaleY = ObjectAnimator.ofFloat(binding.buttonAnimation, "scaleY", 0.1f)
@@ -30,7 +30,7 @@ class EtcActivity : AppCompatActivity() {
 //      startScaleY.duration = 1000L
 //      endScaleX.duration = 1000L
 //      endScaleY.duration = 1000L
-//
+
       val animatorSet = AnimatorSet()
       animatorSet.playTogether(
         startScaleX,
@@ -51,8 +51,6 @@ class EtcActivity : AppCompatActivity() {
       AnimatorSet().apply {
         playTogether(startScaleX, startScaleY)
       }.start()
-
     }
-
   }
 }
