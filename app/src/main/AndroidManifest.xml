@@ -13,6 +13,8 @@
       android:supportsRtl="true"
       android:theme="@style/Theme.TestProject">
     <activity android:name=".coroutine.CoroutineActivity"></activity>
+    <activity android:name=".test.string.StringActivity"></activity>
+    <activity android:name=".test.TestActivity" />
     <activity android:name=".viewtest.textview.TextViewActivity" />
     <activity android:name=".kakao.KakaoActivity" />
     <activity android:name=".result.ResultActivity" />

@@ -1,7 +1,7 @@
 package com.js.testproject.viewtest
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.js.testproject.R
 import com.js.testproject.adapter.ActivityOpenAdapter

@@ -14,6 +14,7 @@ import com.js.testproject.notification.NotificationActivity
 import com.js.testproject.permission.PermissionActivity
 import com.js.testproject.result.ResultActivity
 import com.js.testproject.stack.StackActivity
+import com.js.testproject.test.TestActivity
 import com.js.testproject.util.UtilActivity
 import com.js.testproject.viewtest.ViewTestActivity
 
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         classList.add(LottoActivity::class.java)
         classList.add(ResultActivity::class.java)
         classList.add(CoroutineActivity::class.java)
+        classList.add(TestActivity::class.java)
 
         binding.rvMain.adapter = ActivityOpenAdapter(this, classList)
 
