@@ -9,6 +9,7 @@ import com.js.testproject.coroutine.CoroutineActivity
 import com.js.testproject.databinding.ActivityMainBinding
 import com.js.testproject.fastcampus.rotto.LottoActivity
 import com.js.testproject.file.FileTestActivity
+import com.js.testproject.intent.IntentActivity
 import com.js.testproject.mediastore.MediaStoreActivity
 import com.js.testproject.notification.NotificationActivity
 import com.js.testproject.permission.PermissionActivity
@@ -38,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         classList.add(ResultActivity::class.java)
         classList.add(CoroutineActivity::class.java)
         classList.add(TestActivity::class.java)
+        classList.add(IntentActivity::class.java)
 
         binding.rvMain.adapter = ActivityOpenAdapter(this, classList)
 
