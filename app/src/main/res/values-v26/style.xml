@@ -13,14 +13,14 @@
 
   </style>
 
-<!--  <style name="CustomTextInputEditText">-->
-<!--    <item name="boxBackgroundColor">#ff0000</item>-->
+  <!--  <style name="CustomTextInputEditText">-->
+  <!--    <item name="boxBackgroundColor">#ff0000</item>-->
 
-<!--  </style>-->
+  <!--  </style>-->
 
   <!--  EditText 색 변경항목 정리 https://pluu.github.io/blog/android/2016/10/31/editText-color/  -->
   <style name="CustomEditText">
-<!--    <item name="android:background">@android:color/transparent</item>-->
+    <!--    <item name="android:background">@android:color/transparent</item>-->
     <!--  포커스 받기 전 밑줄  -->
     <item name="colorControlNormal">#ff0000</item>
     <!--  포커스 받았을 때 밑줄  -->
@@ -47,4 +47,18 @@
     <item name="android:backgroundDimEnabled">true</item>
   </style>
 
+
+
+
+  <style name="EditPhoneNumberStyle" >
+    <item name="android:gravity">center</item>
+    <item name="android:textSize">18dp</item>
+    <item name="android:textColor">@color/black</item>
+    <item name="android:maxLines">1</item>
+    <item name="android:paddingBottom">14dp</item>
+    <item name="android:inputType">number</item>
+    <item name="colorControlNormal">@color/black</item>
+    <item name="colorControlActivated">@color/black</item>
+    <item name="android:textCursorDrawable">@color/black</item>
+  </style>
 </resources>

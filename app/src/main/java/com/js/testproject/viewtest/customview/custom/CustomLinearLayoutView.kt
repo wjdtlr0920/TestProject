@@ -12,9 +12,7 @@ class CustomLinearLayoutView @JvmOverloads constructor(
   context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
-
   var binding : CustomLinearLayoutViewBinding = CustomLinearLayoutViewBinding.inflate(LayoutInflater.from(context), this, false)
-
 
   init {
 
@@ -37,7 +35,7 @@ class CustomLinearLayoutView @JvmOverloads constructor(
 
   //디폴트 설정
   private fun setTypeArray(typedArray : TypedArray){
-    //레이아웃의 배경, LoginButton 이름으로 만든 attrs.xml 속성중 bgColor 를 참조함
+//    //레이아웃의 배경, LoginButton 이름으로 만든 attrs.xml 속성중 bgColor 를 참조함
 //    val bgResId = typedArray.getResourceId(R.styleable.CustomAttrs_bgColor,R.drawable.ic_launcher_background)
 //    linearLayout.setBackgroundResource(bgResId)
 //
@@ -58,6 +56,4 @@ class CustomLinearLayoutView @JvmOverloads constructor(
 
     typedArray.recycle()
   }
-
-
 }

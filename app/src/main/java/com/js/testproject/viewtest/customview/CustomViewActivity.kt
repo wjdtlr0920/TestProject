@@ -14,9 +14,5 @@ class CustomViewActivity : AppCompatActivity() {
     binding = ActivityCustomViewBinding.inflate(layoutInflater)
     setContentView(binding.root)
 
-
-
-
-
   }
 }

@@ -12,7 +12,8 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:supportsRtl="true"
       android:theme="@style/Theme.TestProject">
-    <activity android:name=".viewtest.customview.CustomViewActivity"></activity>
+    <activity android:name=".test.biometric.BiometricActivity"></activity>
+    <activity android:name=".viewtest.customview.CustomViewActivity" />
     <activity android:name=".intent.intenttrans.IntentTransActivity" />
     <activity android:name=".intent.IntentActivity" />
     <activity android:name=".coroutine.CoroutineActivity" />
@@ -22,7 +23,10 @@
     <activity android:name=".kakao.KakaoActivity" />
     <activity android:name=".result.ResultActivity" />
     <activity android:name=".util.calendar.CalendarActivity" />
-    <activity android:name=".viewtest.etc.EtcActivity" />
+    <activity
+        android:name=".viewtest.etc.EtcActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/Transparent" />
     <activity android:name=".fastcampus.rotto.LottoActivity" />
     <activity android:name=".util.random.RandomActivity" />
     <activity android:name=".util.UtilActivity" />

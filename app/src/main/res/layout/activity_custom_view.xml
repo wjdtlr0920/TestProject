@@ -7,9 +7,19 @@
     tools:context=".viewtest.customview.CustomViewActivity">
 
   <com.js.testproject.viewtest.customview.custom.CustomLinearLayoutView
+      android:id="@+id/customLinearLayoutView"
       android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      app:text="텍스트"
-    />
+      android:layout_height="wrap_content"
+      app:text="텍스트" />
+
+  <com.js.testproject.viewtest.customview.custom.CustomTextView
+      android:id="@+id/customTextView"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:text="123"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/customLinearLayoutView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
