@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.js.testproject.R
 import com.js.testproject.adapter.ActivityOpenAdapter
+import com.js.testproject.callcheet.PretendCallActivity
 import com.js.testproject.coroutine.CoroutineActivity
 import com.js.testproject.databinding.ActivityMainBinding
 import com.js.testproject.fastcampus.rotto.LottoActivity
 import com.js.testproject.file.FileTestActivity
+import com.js.testproject.firebase.FirebaseActivity
 import com.js.testproject.intent.IntentActivity
 import com.js.testproject.mediastore.MediaStoreActivity
 import com.js.testproject.notification.NotificationActivity
@@ -40,6 +42,8 @@ class MainActivity : AppCompatActivity() {
         classList.add(CoroutineActivity::class.java)
         classList.add(TestActivity::class.java)
         classList.add(IntentActivity::class.java)
+        classList.add(FirebaseActivity::class.java)
+        classList.add(PretendCallActivity::class.java)
 
         binding.rvMain.adapter = ActivityOpenAdapter(this, classList)
 

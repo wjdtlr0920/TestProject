@@ -1,5 +1,7 @@
 package com.js.testproject
 
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.*
 import org.junit.Test
 
@@ -193,5 +195,117 @@ class ExampleUnitTest {
 //    println()
 //    println()
   }
+
+
+  @Suppress("UNCHECKED_CAST")
+  @Test
+  fun asd() {
+
+
+    val latestEmailListTest = ArrayList<AutoCompleteEmail>()
+    latestEmailListTest.add(AutoCompleteEmail("asdasd@naver.com", "153215321100"))
+    latestEmailListTest.add(AutoCompleteEmail("asdasd@naver.com", "153215321101"))
+    latestEmailListTest.add(AutoCompleteEmail("asdasd@naver.com", "153215321102"))
+    latestEmailListTest.add(AutoCompleteEmail("asdasd@naver.com", "153215321103"))
+    latestEmailListTest.add(AutoCompleteEmail("asdasd@naver.com", "153215321104"))
+    latestEmailListTest.add(AutoCompleteEmail("asdasd@naver.com", "153215321105"))
+    latestEmailListTest.add(AutoCompleteEmail("asdasd@naver.com", "153215321106"))
+    latestEmailListTest.add(AutoCompleteEmail("asdasd@naver.com", "153215321107"))
+    latestEmailListTest.add(AutoCompleteEmail("asdasd@naver.com", "153215321108"))
+    latestEmailListTest.add(AutoCompleteEmail("asdasd@naver.com", "153215321109"))
+    latestEmailListTest.add(AutoCompleteEmail("asdasd@naver.com", "153215321110"))
+    latestEmailListTest.add(AutoCompleteEmail("asdasd@naver.com", "153215321111"))
+
+
+    println(latestEmailListTest)
+    println()
+
+
+    val subList = latestEmailListTest.subList(0,10)
+
+    println(subList)
+
+
+//    latestEmailListTest.sortByDescending { it.sendTimeMillis.toLong() }
+//    val list = latestEmailListTest.distinctBy { it.email }
+
+//    print(list)
+
+//
+//    val xxx = Gson().toJson(latestEmailListTest)
+//    val zzz = getStringToLatestDataList<AutoCompleteEmail>(xxx)
+//
+//    print(zzz[1])
+
+//    val xxx = getLatestDataToString(latestEmailListTest)
+
+//    val list : ArrayList<Any?> = arrayListOf<AutoCompleteEmail>() as ArrayList<Any?>
+
+//    val sss = Gson().fromJson(xxx, Array::class.java).toList()
+//    val sss = getStringToLatestDataList<AutoCompleteEmail>(xxx)
+//
+//    print(sss)
+
+
+//    val ddd = arrayListOf(sss)
+
+//    val asd = latestEmailListTest.distinctBy { it.email }
+//    println(asd)
+//
+//    val asdd = latestEmailListTest.distinct()
+//
+//    latestEmailListTest.distinctBy { it.email }
+//    println(asdd)
+//
+////    val asd = arrayOf(AutoCompleteEmail("aaa", "1"), AutoCompleteEmail("aab", "2"), AutoCompleteEmail("aac", "3"))
+////
+////    println(asd)
+////    println()
+////    println(asd.contentToString())
+//
+//
+//    print("\n\n\n\n\n")
+
+//    print(latestEmailListTest.toString())
+
+  }
+
+//  /**
+//   * 데이터 스트링 변환
+//   * */
+//  fun <T> getLatestDataToString(dataList: ArrayList<T>): String {
+//    return Gson().toJson(dataList)
+//  }
+//
+//  /**
+//   * 데이터 스트링 변환
+//   * */
+//  fun <T> getStringToLatestDataList(dataString: String): ArrayList<T> {
+////    val arrayList = arrayListOf<T>()
+////    list.forEach { arrayList.add() }
+////    arrayList
+//    val type = object : TypeToken<ArrayList<AutoCompleteEmail>>() {}.type
+//    return Gson().fromJson(dataString, type)
+//  }
+//
+//  /**
+//   * 데이터 스트링 변환
+//   * */
+//  fun <T> getStringToLatestDataList(dataString: String): ArrayList<T> {
+//    //    val arrayList = arrayListOf<T>()
+////    list.forEach { arrayList.add() }
+////    arrayList
+//
+//    val list = Gson().fromJson(dataString, Array::class.java).toList()
+//
+//
+//    val arrayList = arrayListOf<T>()
+//    list.forEach {
+//      arrayList.add(it as T)
+//    }
+//    return
+//
+//  }
+
 
 }

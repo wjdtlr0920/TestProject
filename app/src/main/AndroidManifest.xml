@@ -12,13 +12,17 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:supportsRtl="true"
       android:theme="@style/Theme.TestProject">
-    <activity android:name=".test.biometric.BiometricActivity"></activity>
+    <activity android:name=".callcheet.PretendCallActivity"></activity>
+    <activity android:name=".firebase.FirebaseActivity" />
+    <activity android:name=".test.biometric.BiometricActivity" />
     <activity android:name=".viewtest.customview.CustomViewActivity" />
     <activity android:name=".intent.intenttrans.IntentTransActivity" />
     <activity android:name=".intent.IntentActivity" />
     <activity android:name=".coroutine.CoroutineActivity" />
     <activity android:name=".test.string.StringActivity" />
-    <activity android:name=".test.TestActivity" />
+    <activity
+        android:name=".test.TestActivity"
+        android:windowSoftInputMode="adjustResize"></activity>
     <activity android:name=".viewtest.textview.TextViewActivity" />
     <activity android:name=".kakao.KakaoActivity" />
     <activity android:name=".result.ResultActivity" />
@@ -44,6 +48,16 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+
+    <service android:name=".FirebaseInstanceIDService">
+      <intent-filter>
+        <action android:name="com.google.firebase.MESSAGING_EVENT" />
+      </intent-filter>
+    </service>
+
+    <meta-data
+        android:name="com.google.firebase.messaging.default_notification_channel_id"
+        android:value="aaaa" />
   </application>
 
 </manifest>

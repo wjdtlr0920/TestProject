@@ -1,14 +1,12 @@
 package com.js.testproject.test.biometric
 
-import android.app.KeyguardManager
 import android.hardware.biometrics.BiometricManager.Authenticators.BIOMETRIC_STRONG
 import android.hardware.biometrics.BiometricManager.Authenticators.DEVICE_CREDENTIAL
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.biometric.BiometricPrompt
 import com.js.testproject.databinding.ActivityBiometricBinding
-import com.orhanobut.logger.Logger
 import java.util.concurrent.Executor
 
 class BiometricActivity : AppCompatActivity() {
@@ -27,9 +25,10 @@ class BiometricActivity : AppCompatActivity() {
 //      if (keyguardManager.isDeviceSecure){
 //        Logger.e("${keyguardManager.isDeviceSecure}")
 //      }
+
       val promptInfo = BiometricPrompt.PromptInfo.Builder()
-        .setTitle("Biometric login for my app")
-        .setSubtitle("Log in using your biometric credential")
+        .setTitle("생체 인증 해주세요")
+        .setSubtitle("여기는 서브 타이틀 입니다")
         .setAllowedAuthenticators(BIOMETRIC_STRONG or DEVICE_CREDENTIAL)
         .build()
 
@@ -37,11 +36,10 @@ class BiometricActivity : AppCompatActivity() {
       val biometricPrompt : BiometricPrompt = BiometricPrompt(this, Executor {  }, authenticationCallback)
       biometricPrompt.authenticate(promptInfo)
 
-
     }
   }
 
-  fun getAuthenticationCallback() = object : BiometricPrompt.AuthenticationCallback() {
+  private fun getAuthenticationCallback() = object : BiometricPrompt.AuthenticationCallback() {
     override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
       super.onAuthenticationError(errorCode, errString)
       Toast.makeText(this@BiometricActivity,"생채 인식 에러",Toast.LENGTH_SHORT).show()
@@ -57,5 +55,4 @@ class BiometricActivity : AppCompatActivity() {
       Toast.makeText(this@BiometricActivity,"생채 인식 실패",Toast.LENGTH_SHORT).show()
     }
   }
-
 }
