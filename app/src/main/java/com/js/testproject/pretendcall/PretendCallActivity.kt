@@ -1,8 +1,7 @@
-package com.js.testproject.callcheet
+package com.js.testproject.pretendcall
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.js.testproject.R
 import com.js.testproject.databinding.ActivityPretendCallBinding
 
 class PretendCallActivity : AppCompatActivity() {
@@ -12,7 +11,8 @@ class PretendCallActivity : AppCompatActivity() {
     binding = ActivityPretendCallBinding.inflate(layoutInflater)
     setContentView(binding.root)
 
-    
+    SimpleWorker(this, )
+
 
   }
 }

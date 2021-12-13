@@ -12,7 +12,7 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:supportsRtl="true"
       android:theme="@style/Theme.TestProject">
-    <activity android:name=".callcheet.PretendCallActivity"></activity>
+    <activity android:name=".pretendcall.PretendCallActivity"></activity>
     <activity android:name=".firebase.FirebaseActivity" />
     <activity android:name=".test.biometric.BiometricActivity" />
     <activity android:name=".viewtest.customview.CustomViewActivity" />

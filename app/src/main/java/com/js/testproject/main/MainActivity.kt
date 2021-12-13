@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.js.testproject.R
 import com.js.testproject.adapter.ActivityOpenAdapter
-import com.js.testproject.callcheet.PretendCallActivity
+import com.js.testproject.pretendcall.PretendCallActivity
 import com.js.testproject.coroutine.CoroutineActivity
 import com.js.testproject.databinding.ActivityMainBinding
 import com.js.testproject.fastcampus.rotto.LottoActivity
