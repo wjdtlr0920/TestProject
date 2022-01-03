@@ -11,7 +11,7 @@ class PretendCallActivity : AppCompatActivity() {
     binding = ActivityPretendCallBinding.inflate(layoutInflater)
     setContentView(binding.root)
 
-    SimpleWorker(this, )
+//    SimpleWorker(this, )
 
 
   }

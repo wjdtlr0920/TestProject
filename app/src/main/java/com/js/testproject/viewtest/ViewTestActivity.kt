@@ -6,8 +6,10 @@ import androidx.databinding.DataBindingUtil
 import com.js.testproject.R
 import com.js.testproject.adapter.ActivityOpenAdapter
 import com.js.testproject.databinding.ActivityViewTestBinding
+import com.js.testproject.viewtest.addview.AddViewActivity
 import com.js.testproject.viewtest.customview.CustomViewActivity
 import com.js.testproject.viewtest.etc.EtcActivity
+import com.js.testproject.viewtest.keyboard.KeyboardActivity
 import com.js.testproject.viewtest.textinputlayout.TextInputLayoutActivity
 import com.js.testproject.viewtest.textview.TextViewActivity
 
@@ -24,6 +26,8 @@ class ViewTestActivity : AppCompatActivity() {
         classList.add(TextViewActivity::class.java)
         classList.add(CustomViewActivity::class.java)
         classList.add(EtcActivity::class.java)
+        classList.add(KeyboardActivity::class.java)
+        classList.add(AddViewActivity::class.java)
 
         binding.recyclerview.adapter = ActivityOpenAdapter(this, classList)
     }
