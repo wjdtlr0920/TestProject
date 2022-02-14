@@ -20,6 +20,7 @@ import com.js.testproject.stack.StackActivity
 import com.js.testproject.test.TestActivity
 import com.js.testproject.util.UtilActivity
 import com.js.testproject.viewtest.ViewTestActivity
+import com.js.testproject.xml.XmlTestActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,6 +45,7 @@ class MainActivity : AppCompatActivity() {
         classList.add(IntentActivity::class.java)
         classList.add(FirebaseActivity::class.java)
         classList.add(PretendCallActivity::class.java)
+        classList.add(XmlTestActivity::class.java)
 
         binding.rvMain.adapter = ActivityOpenAdapter(this, classList)
 

@@ -6,6 +6,14 @@ import org.junit.Test
 
 class AccountTest {
 
+  companion object {
+
+    fun printttttt(text : String){
+      println(text)
+    }
+
+  }
+
   @Test
   fun init(){
     try {

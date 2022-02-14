@@ -15,11 +15,20 @@
   <com.js.testproject.viewtest.customview.custom.CustomTextView
       android:id="@+id/customTextView"
       android:layout_width="0dp"
-      android:layout_height="0dp"
+      android:layout_height="wrap_content"
       android:text="123"
-      app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintRight_toRightOf="parent"
       app:layout_constraintTop_toBottomOf="@id/customLinearLayoutView" />
+
+
+
+  <com.js.testproject.viewtest.customview.custom.BasicCustomView
+      android:id="@+id/basicCustomView"
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:text="테스트주에에ㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴ에"
+      app:layout_constraintTop_toBottomOf="@id/customTextView"
+    />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

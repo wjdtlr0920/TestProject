@@ -1,15 +1,15 @@
 package com.js.testproject
 
-import android.util.Log
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import com.orhanobut.logger.Logger
 import kotlinx.coroutines.*
 import org.junit.Test
 
 import org.junit.Assert.*
+import java.lang.Math.abs
 import java.lang.StringBuilder
+import java.util.*
 import java.util.regex.Pattern
+import kotlin.collections.ArrayList
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -17,6 +17,15 @@ import java.util.regex.Pattern
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 class ExampleUnitTest {
+
+
+  companion object {
+
+    fun printttttt2(text: String) {
+      println(text)
+    }
+  }
+
   @Test
   fun addition_isCorrect() = runBlocking {
 
@@ -430,19 +439,31 @@ class ExampleUnitTest {
 //  [1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5]	"right"
 
   @Test
-  fun test(){
+  fun test() {
 
     val leftElement = "*"
     val rightElement = "#"
 
     val test = arrayListOf<ArrayList<String>>().apply {
-      for(i in 1..10 step 3)
-        if (i!=10) add(arrayListOf(i.toString(), (i+1).toString(), (i+2).toString())) else add(arrayListOf("*","0","#"))
+      for (i in 1..10 step 3)
+        if (i != 10) add(
+          arrayListOf(
+            i.toString(),
+            (i + 1).toString(),
+            (i + 2).toString()
+          )
+        ) else add(arrayListOf("*", "0", "#"))
     }
 
     val test2 = arrayListOf<ArrayList<String>>().apply {
-      while(size < 4) {
-        if (size != 3) add(arrayListOf((size * 3 + 1).toString(),(size * 3 + 2).toString(),(size * 3 + 3).toString())) else add(arrayListOf("*", "0", "#"))
+      while (size < 4) {
+        if (size != 3) add(
+          arrayListOf(
+            (size * 3 + 1).toString(),
+            (size * 3 + 2).toString(),
+            (size * 3 + 3).toString()
+          )
+        ) else add(arrayListOf("*", "0", "#"))
       }
     }
 
@@ -455,7 +476,7 @@ class ExampleUnitTest {
 
 
   @Test
-  fun dataClassTest(){
+  fun dataClassTest() {
 
     val dataClass1 = DataClass1()
     val dataClass2 = dataClass1.copy()
@@ -473,5 +494,412 @@ class ExampleUnitTest {
     val name: String = "kim",
     val age: String = "26"
   )
+
+  class DataClass2(
+    val name: String = "kim",
+    val age: String = "26"
+  ) {
+    operator fun component1() = name
+    operator fun component2() = age
+
+    infix fun asd(a: String): String {
+      return "$name 123"
+    }
+
+  }
+
+  @Test
+  fun classConstructTest() {
+    val testList = arrayListOf<DataClass1>().apply {
+      add(DataClass1("1", "a"))
+      add(DataClass1("2", "b"))
+      add(DataClass1("3", "c"))
+    }
+
+    for (i in testList) {
+      println(i)
+    }
+    println()
+    for (name in testList) {
+      println("$name")
+    }
+    println()
+    for ((name) in testList) {
+      println("$name")
+    }
+    println()
+    for ((name, age) in testList) {
+      println("$name , $age")
+    }
+    println()
+    for (i in testList) {
+      println("${i.component1()} , ${i.component2()}")
+    }
+
+    val (name, age) = DataClass1("4", "d")
+    println(name)
+    println(age)
+    println(name + age)
+    println()
+
+    val (a, b) = DataClass1("4", "d")
+    println(a)
+    println(b)
+    println(a + b)
+    println()
+
+
+    val testList2 = arrayListOf<DataClass1>().apply {
+      add(DataClass1("1", "a"))
+      add(DataClass1("2", "b"))
+      add(DataClass1("3", "c"))
+    }
+
+    for (i in testList2) {
+      println(i)
+    }
+    println()
+    for (name in testList2) {
+      println("$name")
+    }
+    println()
+    for ((name) in testList2) {
+      println("$name")
+    }
+    println()
+    for ((name, age) in testList2) {
+      println("$name , $age")
+    }
+    println()
+    for (i in testList2) {
+      println("${i.component1()} , ${i.component2()}")
+    }
+
+    val (namee, agee) = DataClass2("4", "d")
+    println(name)
+    println(age)
+    println(name + age)
+    println()
+
+    val (aa, bb) = DataClass2("4", "d")
+    println(aa)
+    println(bb)
+    println(aa + bb)
+    println()
+
+    // TODO: 2022/01/12 asdasdasd
+//    TODO("나중에 할거~~~")
+
+  }
+
+
+  @Test
+  fun testtttt() {
+
+    val a = DataClass2("z", "zz")
+    println(a asd "123")
+
+  }
+
+
+  @Test
+  fun stringTest() {
+    println("화물정보 수정 요청 : %d건 / 배차취소 요청 : %d건".format(4, 3))
+  }
+
+
+  @Test
+  fun stringTest2() {
+    val calendar = Calendar.getInstance()
+    calendar.add(Calendar.DAY_OF_MONTH, 5)
+
+    println(calendar.time)
+
+  }
+
+  @Test
+  fun calculateTest() {
+
+    println(0 / 100)
+
+  }
+
+
+  @Test
+  fun kakaoPhone() {
+
+    val left = mutableListOf(3, 0)
+    val right = mutableListOf(3, 2)
+
+    val hand = "left"
+
+    val stringBuffer = StringBuffer("")
+
+    val map = mutableListOf<MutableList<String>>().apply {
+      for (i in 0..2)
+        add(mutableListOf((i * 3 + 1).toString(), (i * 3 + 2).toString(), (i * 3 + 3).toString()))
+      add(mutableListOf("*", "0", "#"))
+    }
+
+    val dummyData = IntArray(11).apply {
+      this[0] = 7
+      this[1] = 0
+      this[2] = 8
+      this[3] = 2
+      this[4] = 8
+      this[5] = 3
+      this[6] = 1
+      this[7] = 5
+      this[8] = 7
+      this[9] = 6
+      this[10] = 2
+    }
+
+
+    fun getHand(number: String): String {
+
+      val position = mutableListOf<Int>()
+
+      map.forEachIndexed { index, it ->
+        if (it.indexOf(number) != -1) {
+          position.add(index)
+          position.add(it.indexOf(number))
+        }
+      }
+
+      return if (position[1] == 2) {
+        right[0] = position[0]
+        right[1] = position[1]
+        "R"
+      } else if (position[1] == 0) {
+        left[0] = position[0]
+        left[1] = position[1]
+        "L"
+      } else {
+        val a1 = if (position[0] - left[0] >= 0) position[0] - left[0] else left[0] - position[0]
+        val a2 = if (position[1] - left[1] >= 0) position[1] - left[1] else left[1] - position[1]
+        val b1 = if (position[0] - right[0] >= 0) position[0] - right[0] else right[0] - position[0]
+        val b2 = if (position[1] - right[1] >= 0) position[1] - right[1] else right[1] - position[1]
+        val leftDistance = a1 + a2
+        val rightDistance = b1 + b2
+        if (leftDistance == rightDistance) {
+          if (hand == "right") {
+            right[0] = position[0]
+            right[1] = position[1]
+            "R"
+          } else {
+            left[0] = position[0]
+            left[1] = position[1]
+            "L"
+          }
+        } else {
+          if (leftDistance > rightDistance) {
+            right[0] = position[0]
+            right[1] = position[1]
+            "R"
+          } else {
+            left[0] = position[0]
+            left[1] = position[1]
+            "L"
+          }
+        }
+      }
+    }
+
+    dummyData.forEach {
+
+      stringBuffer.append(getHand(it.toString()))
+    }
+
+    println("result : $stringBuffer")
+
+  }
+
+  @Test
+  fun te23123st() {
+    println(listOf(10, 20, 30, 40, 50, 60, 70, 80, 90).indexOf(0))
+  }
+
+
+  @Test
+  fun te223123st() {
+    val asd = listOf(10, 20, 30, 40, 50, 60, 70, 80, 90)
+    for ((index, i) in asd.withIndex()) {
+      println(index)
+      println(i.toString())
+    }
+  }
+
+  @Test
+  fun kakao2run() {
+
+//    [[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]]
+
+    val board = arrayOf(
+      intArrayOf(0, 0, 0, 0, 0),
+      intArrayOf(0, 0, 1, 0, 3),
+      intArrayOf(0, 2, 5, 0, 1),
+      intArrayOf(4, 2, 4, 4, 2),
+      intArrayOf(3, 5, 1, 3, 1)
+    )
+    val moves = intArrayOf(1, 5, 3, 5, 1, 2, 1, 4)
+//    kakao2(board, moves)
+    print(stackTest2(board, moves))
+  }
+//  4311324
+
+  fun kakao2(board: Array<IntArray>, moves: IntArray): Int {
+
+    val resultIntArray = arrayListOf<Int>()
+    var answer = 0
+
+    moves.forEach loop@{ move ->
+      board.forEachIndexed { iIndex, i ->
+        i.forEachIndexed { jIndex, j ->
+          if (move - 1 == jIndex) {
+            if (j != 0) {
+              resultIntArray.add(board[iIndex][jIndex])
+              board[iIndex][jIndex] = 0
+              return@loop
+            }
+          }
+        }
+      }
+    }
+
+    fun answerCheck() {
+      resultIntArray.forEachIndexed loop@ { iIndex, i ->
+        if (i==0)
+          return@loop
+        resultIntArray.forEachIndexed loop2@{ jIndex, j ->
+          if (resultIntArray[jIndex] == 0)
+            return@loop2
+          if (jIndex > iIndex) {
+            if (resultIntArray[iIndex] == resultIntArray[jIndex]) {
+              resultIntArray[iIndex] = 0
+              resultIntArray[jIndex] = 0
+              answer += 2
+              answerCheck()
+              return@answerCheck
+            } else {
+              return@loop
+            }
+          }
+        }
+      }
+    }
+    answerCheck()
+
+    return answer
+  }
+
+
+  @Test
+  fun labelTest() {
+    val intArray = intArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    val intArray2 = arrayListOf(
+      intArray,
+      intArray,
+      intArray,
+      intArray,
+      intArray,
+      intArray,
+      intArray,
+      intArray,
+      intArray
+    )
+
+    intArray2.forEachIndexed loop@{ iIndex, i ->
+      intArray.forEachIndexed { jIndex, j ->
+        print(i[iIndex])
+        return@loop
+      }
+      println()
+    }
+
+  }
+
+  @Test
+  fun loop2(){
+    var count = 0
+    fun loop3(){
+      if (count >= 10)
+        return
+      else{
+        count++
+        loop3()
+      }
+    }
+    loop3()
+    print(count)
+  }
+
+
+  @Test
+  fun stackTest(){
+    val stack : Stack<Int> = Stack()
+    println(stack.empty())
+    if (stack.isNotEmpty() || stack.peek() == -10)
+      println("stack.peek()")
+//    println(stack.pop())
+  }
+
+  fun stackTest2(board: Array<IntArray>, moves: IntArray): Int{
+    var answer = 0
+    val stack = Stack<Int>()
+
+    moves.forEach {
+      for (i in board.indices) {
+        if (board[i][it - 1] != 0) {
+          if (stack.isNotEmpty() && stack.peek() == board[i][it - 1]) {
+            answer += 2
+            stack.pop()
+          } else {
+            stack.push(board[i][it - 1])
+          }
+          board[i][it - 1] = 0
+
+          break
+        }
+      }
+    }
+    return answer
+  }
+
+  @Test
+  fun splitTest(){
+//    val splitEmail = "wjdtlr16@naver.comashkbasjkdbasjkdb@naver.com".split("@")
+    val splitEmail = "".split("@")
+    val emailLength = splitEmail.sumOf { it.length } - splitEmail.last().length
+    print(splitEmail)
+    print(emailLength)
+    print(emailLength < 20)
+  }
+
+
+  @Test
+  fun charTest(){
+
+    val charCode = '가'.toInt()
+    val shCode = charCode.shr(8)
+    print(shCode)
+    print('\uAC00')
+    print('\uAc00')
+    println()
+    println()
+
+    for (i in 0..65535){
+      println(i.toChar())
+    }
+
+
+
+  }
+
+}
+
+class Cook private constructor(val name: String, val time: Long) {
+
+  val test = "zzz"
 
 }

@@ -21,11 +21,22 @@
         android:orientation="vertical">
 
       <TextView
+          android:id="@+id/overText"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_marginTop="5dp"
           android:gravity="center"
-          android:text="뷰 길이 넘어갈떄"
+          android:text="뷰 길이 넘어갈때에에에에에에에에에에에에에에에123456"
+          android:maxLines="1"
+          android:textSize="23dp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="5dp"
+          android:gravity="center"
+          android:text="뷰 길이 넘어갈때"
           android:textSize="23dp"
           android:textStyle="bold" />
 

@@ -3,6 +3,7 @@
     package="com.js.testproject">
 
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.CALL_PHONE" />
 
   <application
       android:name=".base.application.BaseApplication"
@@ -12,7 +13,16 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:supportsRtl="true"
       android:theme="@style/Theme.TestProject">
-    <activity android:name=".viewtest.addview.AddViewActivity"></activity>
+    <activity android:name=".headerfooter.HeaderFooterActivity"></activity>
+    <activity android:name=".viewtest.motionlayout.MotionLayoutActivity" />
+    <activity android:name=".viewtest.numberpicker.NumberPickerActivity" />
+    <activity android:name=".xml.XmlTestActivity">
+      <meta-data
+          android:name="android.app.searchable"
+          android:resource="@xml/searchable" />
+    </activity>
+    <activity android:name=".viewtest.dialog.DialogTestActivity" />
+    <activity android:name=".viewtest.addview.AddViewActivity" />
     <activity
         android:name=".viewtest.keyboard.KeyboardActivity"
         android:windowSoftInputMode="adjustResize" />

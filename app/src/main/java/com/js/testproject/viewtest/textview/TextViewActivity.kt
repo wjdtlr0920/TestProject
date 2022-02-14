@@ -1,8 +1,10 @@
 package com.js.testproject.viewtest.textview
 
 import android.os.Bundle
+import android.text.TextUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.js.testproject.databinding.ActivityTextViewBinding
+import com.orhanobut.logger.Logger
 
 class TextViewActivity : AppCompatActivity() {
 
@@ -17,7 +19,7 @@ class TextViewActivity : AppCompatActivity() {
     // lines = 1, maxLines = 1 으로 줘도 동작안함 singleLine = true를 줘야함
     binding.ellipeMarqueeTest.isSelected = true
 
-
+    Logger.e(binding.overText.paint.toString())
 
   }
 }

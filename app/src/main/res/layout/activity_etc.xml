@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".viewtest.etc.EtcActivity"
-    android:background="@android:color/transparent">
+    android:background="@android:color/transparent"
+    tools:context=".viewtest.etc.EtcActivity">
 
 
   <androidx.appcompat.widget.AppCompatTextView
@@ -13,32 +13,31 @@
       style="@style/text_main_list"
       android:layout_width="0dp"
       android:layout_height="70dp"
-      android:text="ButtonAnimation"
       android:layout_margin="10dp"
+      android:text="ButtonAnimation"
+      app:layout_constraintEnd_toStartOf="@id/button_test2"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintEnd_toStartOf="@id/button_test2"/>
+      app:layout_constraintTop_toTopOf="parent" />
 
   <androidx.appcompat.widget.AppCompatTextView
       android:id="@+id/button_animation"
-      android:background="#66ffffff"
       android:layout_width="0dp"
       android:layout_height="0dp"
-      app:layout_constraintTop_toTopOf="@id/button_test"
+      android:background="#66ffffff"
       app:layout_constraintBottom_toBottomOf="@id/button_test"
-      app:layout_constraintStart_toStartOf="@id/button_test"
       app:layout_constraintEnd_toEndOf="@id/button_test"
-      />
+      app:layout_constraintStart_toStartOf="@id/button_test"
+      app:layout_constraintTop_toTopOf="@id/button_test" />
 
   <androidx.appcompat.widget.AppCompatTextView
       android:id="@+id/button_test2"
       style="@style/text_main_list"
       android:layout_width="0dp"
       android:layout_height="70dp"
-      android:text="ButtonAnimation"
       android:layout_margin="10dp"
-      app:layout_constraintStart_toEndOf="@id/button_test"
+      android:text="ButtonAnimation"
       app:layout_constraintEnd_toStartOf="@id/button_test3"
+      app:layout_constraintStart_toEndOf="@id/button_test"
       app:layout_constraintTop_toTopOf="parent" />
 
   <androidx.appcompat.widget.AppCompatTextView
@@ -46,36 +45,45 @@
       style="@style/text_main_list"
       android:layout_width="0dp"
       android:layout_height="70dp"
-      android:text="ButtonAnimation"
       android:layout_margin="10dp"
+      android:text="ButtonAnimation"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toEndOf="@id/button_test2"
       app:layout_constraintTop_toTopOf="parent" />
 
   <androidx.appcompat.widget.AppCompatTextView
       android:id="@+id/button_animation3"
-      android:background="#aa666666"
       android:layout_width="0dp"
       android:layout_height="0dp"
-      app:layout_constraintTop_toTopOf="@id/button_test3"
+      android:background="#aa666666"
       app:layout_constraintBottom_toBottomOf="@id/button_test3"
-      app:layout_constraintStart_toStartOf="@id/button_test3"
       app:layout_constraintEnd_toEndOf="@id/button_test3"
-      />
+      app:layout_constraintStart_toStartOf="@id/button_test3"
+      app:layout_constraintTop_toTopOf="@id/button_test3" />
 
 
   <androidx.appcompat.widget.AppCompatEditText
-      style="@style/EditPhoneNumberStyle"
       android:id="@+id/edit_text_test"
+      style="@style/EditPhoneNumberStyle"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
       android:gravity="center"
       android:paddingBottom="14dp"
-      android:layout_marginTop="8dp"
-      app:layout_constraintTop_toBottomOf="@id/button_test"
-      app:layout_constraintStart_toStartOf="@id/button_test"
       app:layout_constraintEnd_toEndOf="@id/button_test"
-      />
+      app:layout_constraintStart_toStartOf="@id/button_test"
+      app:layout_constraintTop_toBottomOf="@id/button_test" />
+
+  <ViewStub
+      android:id="@+id/viewStub"
+      android:inflatedId="@+id/viewSubStub"
+      android:layout_width="0dp"
+      android:layout_height="200dp"
+      android:layout="@layout/activity_etc"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

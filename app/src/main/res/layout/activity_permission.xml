@@ -17,5 +17,13 @@
             android:text="Permission"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/call_permission"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            style="@style/text_main_list"
+            android:text="call_permission"
+            app:layout_constraintTop_toBottomOf="@+id/default_permission" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
