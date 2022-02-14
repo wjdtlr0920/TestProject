@@ -1,10 +1,12 @@
 package com.js.testproject.main
 
+import android.animation.ValueAnimator
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.js.testproject.R
 import com.js.testproject.adapter.ActivityOpenAdapter
+import com.js.testproject.composetest.ComposeTestActivity
 import com.js.testproject.pretendcall.PretendCallActivity
 import com.js.testproject.coroutine.CoroutineActivity
 import com.js.testproject.databinding.ActivityMainBinding
@@ -46,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         classList.add(FirebaseActivity::class.java)
         classList.add(PretendCallActivity::class.java)
         classList.add(XmlTestActivity::class.java)
+        classList.add(ComposeTestActivity::class.java)
 
         binding.rvMain.adapter = ActivityOpenAdapter(this, classList)
 

@@ -13,7 +13,8 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:supportsRtl="true"
       android:theme="@style/Theme.TestProject">
-    <activity android:name=".headerfooter.HeaderFooterActivity"></activity>
+    <activity android:name=".composetest.ComposeTestActivity"></activity>
+    <activity android:name=".headerfooter.HeaderFooterActivity" />
     <activity android:name=".viewtest.motionlayout.MotionLayoutActivity" />
     <activity android:name=".viewtest.numberpicker.NumberPickerActivity" />
     <activity android:name=".xml.XmlTestActivity">
