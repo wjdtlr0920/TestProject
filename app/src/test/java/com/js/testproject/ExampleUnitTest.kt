@@ -768,8 +768,8 @@ class ExampleUnitTest {
     }
 
     fun answerCheck() {
-      resultIntArray.forEachIndexed loop@ { iIndex, i ->
-        if (i==0)
+      resultIntArray.forEachIndexed loop@{ iIndex, i ->
+        if (i == 0)
           return@loop
         resultIntArray.forEachIndexed loop2@{ jIndex, j ->
           if (resultIntArray[jIndex] == 0)
@@ -820,12 +820,12 @@ class ExampleUnitTest {
   }
 
   @Test
-  fun loop2(){
+  fun loop2() {
     var count = 0
-    fun loop3(){
+    fun loop3() {
       if (count >= 10)
         return
-      else{
+      else {
         count++
         loop3()
       }
@@ -836,15 +836,15 @@ class ExampleUnitTest {
 
 
   @Test
-  fun stackTest(){
-    val stack : Stack<Int> = Stack()
+  fun stackTest() {
+    val stack: Stack<Int> = Stack()
     println(stack.empty())
     if (stack.isNotEmpty() || stack.peek() == -10)
       println("stack.peek()")
 //    println(stack.pop())
   }
 
-  fun stackTest2(board: Array<IntArray>, moves: IntArray): Int{
+  fun stackTest2(board: Array<IntArray>, moves: IntArray): Int {
     var answer = 0
     val stack = Stack<Int>()
 
@@ -867,7 +867,7 @@ class ExampleUnitTest {
   }
 
   @Test
-  fun splitTest(){
+  fun splitTest() {
 //    val splitEmail = "wjdtlr16@naver.comashkbasjkdbasjkdb@naver.com".split("@")
     val splitEmail = "".split("@")
     val emailLength = splitEmail.sumOf { it.length } - splitEmail.last().length
@@ -878,7 +878,7 @@ class ExampleUnitTest {
 
 
   @Test
-  fun charTest(){
+  fun charTest() {
 
     val charCode = '가'.toInt()
     val shCode = charCode.shr(8)
@@ -888,18 +888,397 @@ class ExampleUnitTest {
     println()
     println()
 
-    for (i in 0..65535){
+    for (i in 0..65535) {
       println(i.toChar())
     }
 
 
+  }
+
+
+  @Test
+  fun charTest2() {
+    val a = -5
+    val b = 5
+    val c: Int = 5_5_51
+
+//    println(a and b)
+//    println(a or b)
+//    println(a xor b)
+//    println(a.inv())
+//    println(a shr 1)
+//    println(a shl 1)
+//    println(a ushr 1)
+//    println(c)
+//    println(0.1f + 0.1f + 0.1f)
+//    println(0.1f + 0.1f + 0.1f + 0.1f + 0.1f + 0.1f + 0.1f + 0.1f + 0.1f + 0.1f)
+//    println(0.1f * 10)
+//
+//    println(/* 테스트중 */"가나다라")
+//
+//    println()
+//
+//    val d : Int; d = 15; println(d+3)
+//
+//    println(15.4 > 15)
+//    println(0.00001f == 0.005f * 0.002f)
+//
+//    val e = if (true){
+//      print("")
+//    } else {
+//      print("")
+//    }
+//
+//    print(e)
+//
+//    var i = 1
+//    outer@while (i in 1..9){
+//      i++
+//      println(i)
+//
+//      if (i % 2 == 0){
+//        break@outer
+//      }
+//    }
+
+//    val person = object {
+//      val name = "홍길동"
+//      val age = 36
+//    }
+//
+//    println(person)
+//    println(person.name)
+//    println(person.age)
+//
+//    val cook = Cook("aaa", 123)
+//    println(cook[1])
+//    println(cook[2])
+//
+//    cook[1] = "bbb"
+//    println(cook[1])
+//    println(cook[2])
+//
+//    cook[2] = "ccc"
+//    println(cook[1])
+//    println(cook[2])
+//
+////    val spaghetti: Spaghetti = cook
+//    val spaghetti: Spaghetti = Spaghetti("tomato", "spaghetti", 100L)
+//    println(spaghetti.name)
+//
+//    val cook2: Cook = spaghetti
+//    println(spaghetti.name)
+//
+//    val spaghetti2: Spaghetti = cook2 as Spaghetti
+//    println(spaghetti2.name)
+//
+//    val mCook1: Cook = Cook("Cook", 100L)
+//    val mSpaghetti: Spaghetti = Spaghetti("tomato", "spaghetti", 100L)
+//    val mCook3: Cook = mSpaghetti
+//
+//    println()
+//
+//    mCook1.hello()
+//    mSpaghetti.hello()
+//    print(mCook3.time)
+//    print(mCook3.name)
+//    mCook3.hello()
+//
+//    Nothing
+//    val adasd : Int = throw Exception()
+
+    val cook = Cook("asd", 123L)
+    println(Cook.count)
+    println(Cook.count)
+    println(Cook.count)
+    println(Cook.count)
+    println(Cook.count)
+    println(Cook.count)
 
   }
 
+
+  @Test
+  fun kakaoTest() {
+    fun solution(id_list: Array<String>, report: Array<String>, k: Int): IntArray {
+      val tripleList = id_list.map { Triple(it, intArrayOf(0), StringBuffer("")) }
+      report.forEach { report ->
+        val reportSplit = report.split(" ")
+        tripleList.forEach {
+          if (it.first == reportSplit[1] && !it.third.split(" ")
+              .any { str -> str == reportSplit[0] }
+          ) {
+            it.third.append(if (it.third.isBlank()) reportSplit[0] else " ${reportSplit[0]}")
+            it.second[0]++
+          }
+        }
+      }
+
+      val mailSendArray = IntArray(tripleList.size)
+
+      tripleList.forEach {
+        if (it.second[0] >= k && it.third.isNotBlank()) it.third.toString().trim().split(" ")
+          .forEach { name ->
+            tripleList.forEachIndexed { index, dec -> if (dec.first == name) mailSendArray[index]++ }
+          }
+      }
+
+      println(mailSendArray.toList())
+
+      return mailSendArray
+    }
+
+    val id_list = arrayOf("muzi", "frodo", "apeach", "neo")
+    val report = arrayOf("muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi")
+    val k = 2
+
+    println(solution(id_list, report, k).toList())
+
+  }
+
+
+  @Test
+  fun kakaoTest2() {
+    fun solution(id_list: Array<String>, report: Array<String>, k: Int): IntArray {
+
+
+      val intArray = report.map { it.split(" ") }
+        .groupBy { it[1] }
+        .asSequence()
+        .map { it.value.distinct() }
+        .filter { it.size >= k }
+        .flatten()
+        .map { it[0] }
+        .groupingBy { it }
+        .eachCount()
+        .run { id_list.map { getOrDefault(it, 0) }.toIntArray() }
+
+      println(intArray.toList())
+
+      val mailSendArray = IntArray(0)
+      return mailSendArray
+    }
+
+    val id_list = arrayOf("muzi", "frodo", "apeach", "neo")
+    val report = arrayOf("muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi")
+    val k = 2
+
+//    val list = report.toList()
+//    list.filter { print("toList : $it \n"); it.length > 3 }
+//    println()
+//    println(list)
+//
+//    val sequence = report.asSequence()
+//    sequence.filter { print("asSequenceppp : $it \n"); it.length > 3 }
+//      .map { print("asSequenceppp : $it \n"); it }
+//      .toList()
+//      .take(2)
+//    println(sequence)
+
+    println(solution(id_list, report, k).toList())
+
+  }
+
+  @Test
+  fun kakaoTest3() {
+    fun solution(id_list: Array<String>, report: Array<String>, k: Int): IntArray {
+
+      val result = report.map { it.split(" ") }
+        .groupBy { it[1] }
+        .toList()
+        .map { it.second.distinctBy { des -> des[0] } }
+        .filter { it.size >= k }
+        .flatten()
+        .groupingBy { it[0] }
+        .eachCount()
+        .run { id_list.map { getOrDefault(it, 0) }.toIntArray() }
+
+
+
+
+      println(result.toList())
+
+      val mailSendArray = IntArray(0)
+      return mailSendArray
+    }
+
+    val id_list = arrayOf("muzi", "frodo", "apeach", "neo")
+    val report = arrayOf("muzi frodo", "apeach frodo", "frodo neo", "muzi neo", "apeach muzi")
+    val k = 2
+
+    println(solution(id_list, report, k).toList())
+
+  }
+
+
+  @Test
+  fun backjun1() {
+
+    val n = 7
+    val k = 3
+    var arrayCount = 1
+    var index = 0
+    var count = 1
+
+    val array = IntArray(n) { arrayCount++ }
+    val resultList = mutableListOf<Int>()
+
+
+    while (array.any { it != 0 }) {
+
+      if (index == array.size)
+        index = 0
+
+      if (array[index] == 0) {
+        index++
+        continue
+      }
+
+      if (k == count) {
+        resultList.add(array[index])
+        array[index] = 0
+        count = 1
+        index++
+        continue
+      }
+      index++
+      count++
+    }
+
+    println(resultList.toList().toString().replace("[", "<").replace("]", ">"))
+
+  }
+
+
+//  [44, 1, 0, 0, 31, 25]	[31, 10, 45, 1, 6, 19]	[3, 5]
+//  [0, 0, 0, 0, 0, 0]	[38, 19, 20, 40, 15, 25]	[1, 6]
+//  [45, 4, 35, 20, 3, 9]	[20, 9, 3, 45, 4, 35]	[1, 1]
+// 6 1
+// 5 2
+// 4 3
+// 3 4
+// 2 5
+// 1 6
+// 0 6
+
+  @Test
+  fun lottoTest() {
+
+
+    fun solution(lottos: IntArray, win_nums: IntArray): IntArray {
+
+      val count = lottos.count { myNumber -> win_nums.any { it == myNumber } }
+      val zeroCount = lottos.count { it == 0 }
+      val resultArray = intArrayOf( 7 - count - zeroCount, 7 - count )
+      println(resultArray.toList())
+
+      var answer: IntArray = intArrayOf()
+      return answer
+    }
+
+    println(solution(intArrayOf(44, 1, 0, 0, 31, 25), intArrayOf(31, 10, 45, 1, 6, 19)).toList())
+    println(solution(intArrayOf(0, 0, 0, 0, 0, 0), intArrayOf(38, 19, 20, 40, 15, 25)).toList())
+    println(solution(intArrayOf(45, 4, 35, 20, 3, 9), intArrayOf(20, 9, 3, 45, 4, 35)).toList())
+
+  }
+
+  @Test
+  fun lottoTest2() {
+
+
+    fun solution(lottos: IntArray, win_nums: IntArray): IntArray {
+
+      intArrayOf(
+        (lottos.size.plus(1)) - lottos.filter { win_nums.contains(it) || it == 0 }.size,
+        (lottos.size.plus(1)) - lottos.filter(win_nums::contains).size
+      ).map { if (it > 6) it - 1 else it }.toIntArray()
+      var answer: IntArray = intArrayOf()
+      return answer
+    }
+
+    println(solution(intArrayOf(44, 1, 0, 0, 31, 25), intArrayOf(31, 10, 45, 1, 6, 19)).toList())
+    println(solution(intArrayOf(0, 0, 0, 0, 0, 0), intArrayOf(38, 19, 20, 40, 15, 25)).toList())
+    println(solution(intArrayOf(45, 4, 35, 20, 3, 9), intArrayOf(20, 9, 3, 45, 4, 35)).toList())
+
+  }
+
+
+
+//  [1, 5, 2, 6, 3, 7, 4]	[[2, 5, 3], [4, 4, 1], [1, 7, 3]]	[5, 6, 3]
+
+  @Test
+  fun sortTest() {
+
+    fun solution(array: IntArray, commands: Array<IntArray>) = commands.map { array.toList().subList(it[0]-1, it[1]).sortedBy { item -> item }[it[2]-1] }
+
+    println(solution(intArrayOf( 1, 5, 2, 6, 3, 7, 4 ), arrayOf(intArrayOf(2,5,3),intArrayOf(4,4,1),intArrayOf(1,7,3))).toList())
+
+  }
+
+  @Test
+  fun sortTest2() {
+
+    fun solution(numbers: IntArray) = numbers.map{ it.toString() }.reduce { acc, s -> "$acc$s" }.toList().sortedByDescending { it }.map { it.toString() }.reduce { acc, s -> "$acc$s" }
+
+    println(solution(intArrayOf( 6, 10, 2)))
+
+  }
+
+  @Test
+  fun reflectionTest() {
+    val intArray = intArrayOf(1,2,3,4,5,6,7,8,9)
+//    println(intArray.filter { it. }.toList())
+    println(intArray.filter( ::isOdd ).toList())
+  }
+
+  private fun isOdd(age: Int) = age % 2 == 0
+
 }
 
-class Cook private constructor(val name: String, val time: Long) {
+open class Cook(var name: String, var time: Long) {
+
+  companion object {
+    var count = 1
+      get() = field++
+      private set
+  }
 
   val test = "zzz"
 
+  operator fun get(position: Int): String {
+    return when (position) {
+      1 -> {
+        name
+      }
+      2 -> {
+        time.toString()
+      }
+      else -> "ddd"
+    }
+  }
+
+  operator fun set(position: Int, value: String) {
+    when (position) {
+      1 -> {
+        name = value
+      }
+      2 -> {
+        time = position.toLong()
+      }
+    }
+  }
+
+  operator fun invoke() {
+    println("123456")
+  }
+
+  open fun hello() {
+    println("Cook")
+  }
+}
+
+class Spaghetti(val source: String, name: String, time: Long) : Cook(name, time) {
+  override fun hello() {
+    println("Spaghetti")
+  }
 }
