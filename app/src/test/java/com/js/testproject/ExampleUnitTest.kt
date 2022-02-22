@@ -1,5 +1,6 @@
 package com.js.testproject
 
+import android.util.Log
 import com.orhanobut.logger.Logger
 import kotlinx.coroutines.*
 import org.junit.Test
@@ -1215,13 +1216,17 @@ class ExampleUnitTest {
 
   }
 
+
+//  [6, 10, 2]	"6210"
+//  [3, 30, 34, 5, 9]	"9534330"
+
   @Test
   fun sortTest2() {
 
-    fun solution(numbers: IntArray) = numbers.map{ it.toString() }.reduce { acc, s -> "$acc$s" }.toList().sortedByDescending { it }.map { it.toString() }.reduce { acc, s -> "$acc$s" }
+    fun solution(numbers: IntArray) = numbers.sortedByDescending { var a = it.toDouble();while (a >= 10) a /= 10.0; a }.map { it.toString() }.reduce { acc, i ->"$acc$i" }
 
     println(solution(intArrayOf( 6, 10, 2)))
-
+    println(solution(intArrayOf( 6, 10, 2,5,9,6,3,1,96,41,15,1,5638,435,1,854,351,8,1532,16,81,321,86,13,21,531,3,156)))
   }
 
   @Test
