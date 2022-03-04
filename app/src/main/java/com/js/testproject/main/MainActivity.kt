@@ -1,9 +1,9 @@
 package com.js.testproject.main
 
-import android.animation.ValueAnimator
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.js.testproject.gurucoin.GuruCoinActivity
 import com.js.testproject.R
 import com.js.testproject.adapter.ActivityOpenAdapter
 import com.js.testproject.composetest.ComposeTestActivity
@@ -23,6 +23,7 @@ import com.js.testproject.test.TestActivity
 import com.js.testproject.util.UtilActivity
 import com.js.testproject.viewtest.ViewTestActivity
 import com.js.testproject.xml.XmlTestActivity
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -49,6 +50,7 @@ class MainActivity : AppCompatActivity() {
         classList.add(PretendCallActivity::class.java)
         classList.add(XmlTestActivity::class.java)
         classList.add(ComposeTestActivity::class.java)
+        classList.add(GuruCoinActivity::class.java)
 
         binding.rvMain.adapter = ActivityOpenAdapter(this, classList)
 

@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".test.TestActivity">
 
-
   <EditText
       android:layout_width="match_parent"
       android:layout_height="wrap_content" />
@@ -85,9 +84,9 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_marginTop="100dp"
-          android:visibility="gone"
           android:completionHint="최근 전송 이메일"
-          android:completionThreshold="1" />
+          android:completionThreshold="1"
+          android:visibility="gone" />
 
       <androidx.appcompat.widget.AppCompatTextView
           style="@style/text_main_list"
@@ -130,6 +129,79 @@
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"/>
+      app:layout_constraintTop_toTopOf="parent" />
+
+
+
+  <TextView
+      android:id="@+id/companion"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:background="@color/black"
+      android:text="companion"
+      android:padding="20dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+  <TextView
+      android:id="@+id/companion2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="20dp"
+      android:background="@color/black"
+      android:text="companion2"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent" />
+
+
+  <TextView
+      android:id="@+id/VolatileTest"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="50dp"
+      android:text="VolatileTest"
+      android:background="@color/red_f44b4b"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      />
+
+
+  <TextView
+      android:id="@+id/VolatileTest2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="50dp"
+      android:text="VolatileTest2"
+      android:background="@color/red_f44b4b"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/VolatileTest"
+      />
+
+  <TextView
+      android:id="@+id/VolatileTest3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="50dp"
+      android:text="VolatileTest3"
+      android:background="@color/red_f44b4b"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/VolatileTest2"
+      />
+
+  <TextView
+      android:id="@+id/VolatileTest4"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="50dp"
+      android:text="VolatileTest4"
+      android:background="@color/red_f44b4b"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/VolatileTest3"
+      />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

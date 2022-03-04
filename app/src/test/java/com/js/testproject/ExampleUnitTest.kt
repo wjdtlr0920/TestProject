@@ -8,9 +8,12 @@ import org.junit.Test
 import org.junit.Assert.*
 import java.lang.Math.abs
 import java.lang.StringBuilder
+import java.math.BigDecimal
 import java.util.*
 import java.util.regex.Pattern
 import kotlin.collections.ArrayList
+import kotlin.time.ExperimentalTime
+import kotlin.time.measureTime
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -1170,7 +1173,7 @@ class ExampleUnitTest {
 
       val count = lottos.count { myNumber -> win_nums.any { it == myNumber } }
       val zeroCount = lottos.count { it == 0 }
-      val resultArray = intArrayOf( 7 - count - zeroCount, 7 - count )
+      val resultArray = intArrayOf(7 - count - zeroCount, 7 - count)
       println(resultArray.toList())
 
       var answer: IntArray = intArrayOf()
@@ -1204,15 +1207,20 @@ class ExampleUnitTest {
   }
 
 
-
 //  [1, 5, 2, 6, 3, 7, 4]	[[2, 5, 3], [4, 4, 1], [1, 7, 3]]	[5, 6, 3]
 
   @Test
   fun sortTest() {
 
-    fun solution(array: IntArray, commands: Array<IntArray>) = commands.map { array.toList().subList(it[0]-1, it[1]).sortedBy { item -> item }[it[2]-1] }
+    fun solution(array: IntArray, commands: Array<IntArray>) =
+      commands.map { array.toList().subList(it[0] - 1, it[1]).sortedBy { item -> item }[it[2] - 1] }
 
-    println(solution(intArrayOf( 1, 5, 2, 6, 3, 7, 4 ), arrayOf(intArrayOf(2,5,3),intArrayOf(4,4,1),intArrayOf(1,7,3))).toList())
+    println(
+      solution(
+        intArrayOf(1, 5, 2, 6, 3, 7, 4),
+        arrayOf(intArrayOf(2, 5, 3), intArrayOf(4, 4, 1), intArrayOf(1, 7, 3))
+      ).toList()
+    )
 
   }
 
@@ -1223,21 +1231,385 @@ class ExampleUnitTest {
   @Test
   fun sortTest2() {
 
-    fun solution(numbers: IntArray) = numbers.sortedByDescending { var a = it.toDouble();while (a >= 10) a /= 10.0; a }.map { it.toString() }.reduce { acc, i ->"$acc$i" }
+    fun solution(numbers: IntArray) = numbers.sortedByDescending {
+      var a = BigDecimal(it);while (a >= BigDecimal(10)
+    ) a = a.divide(BigDecimal(10)); a
+    }.toList().map { it.toString() }.reduce { acc, i -> "$acc$i" }
 
-    println(solution(intArrayOf( 6, 10, 2)))
-    println(solution(intArrayOf( 6, 10, 2,5,9,6,3,1,96,41,15,1,5638,435,1,854,351,8,1532,16,81,321,86,13,21,531,3,156)))
+//      .map { it.toString() }.reduce { acc, i ->"$acc$i" }
+
+//    println(solution(intArrayOf(6, 10, 2)))
+    println(solution(intArrayOf(3, 301)))
+//    println(solution(intArrayOf(1, 10, 100, 10, 1000)))
+//    println(solution(intArrayOf(3, 30, 34, 5, 9)))
+
+    "Asd".length
+  }
+
+  @Test
+  fun sortTest3() {
+
+    fun solution(numbers: IntArray) = numbers.sortedBy { it.toString().length }.sortedByDescending {
+      var a = BigDecimal(it);while (a >= BigDecimal(10)
+    ) a = a.divide(BigDecimal(10)); a
+    }.toList().map { it.toString() }.reduce { acc, i -> "$acc$i" }
+
+    println(solution(intArrayOf(6, 10, 2)))
+    println(solution(intArrayOf(1, 100, 10, 1000)))
+    println(solution(intArrayOf(3, 30, 34, 5, 9)))
+
+  }
+
+
+  @Test
+  fun stackTest3() {
+
+    fun solution(progresses: IntArray, speeds: IntArray): IntArray {
+
+      val queue: Queue<Int> = LinkedList()
+      val result = arrayListOf<Int>()
+      progresses.forEach { queue.offer(it) }
+
+      var day = 1
+      var count = 0
+      var index = 0
+
+      while (queue.isNotEmpty()) {
+        while (queue.isNotEmpty() && queue.peek() + (day * speeds[index]) >= 100) {
+          queue.poll()
+          count++
+          index++
+        }
+        if (count != 0)
+          result.add(count)
+        count = 0
+        day++
+      }
+
+      println(result)
+      result.toIntArray()
+
+      var answer = intArrayOf()
+      return answer
+    }
+
+    solution(intArrayOf(93, 30, 55), intArrayOf(1, 30, 5)).toList()
+    solution(intArrayOf(95, 90, 99, 99, 80, 99), intArrayOf(1, 1, 1, 1, 1, 1)).toList()
+//    println(solution(intArrayOf(93, 30, 55), intArrayOf(1, 30, 5)).toList())
+//    println(solution(intArrayOf(95, 90, 99, 99, 80, 99), intArrayOf(1, 1, 1, 1, 1, 1)).toList())
+
+  }
+
+//  [93, 30, 55]	[1, 30, 5]	[2, 1]
+//  [95, 90, 99, 99, 80, 99]	[1, 1, 1, 1, 1, 1]	[1, 3, 2]
+
+  @Test
+  fun stackTest4() {
+
+    fun solution(priorities: IntArray, location: Int): Int {
+
+      val queue = LinkedList<Pair<Int, Int>>().apply {
+        priorities.forEachIndexed { index, value -> offer(Pair(index, value)) }
+      }
+
+      var answer = 0
+
+      while (queue.isNotEmpty()) {
+        if (queue.all { it.second <= queue.peek().second }) {
+          if (queue.peek().first == location)
+            answer = priorities.size - queue.size + 1
+          queue.poll()
+        } else
+          queue.offer(queue.poll())
+      }
+      return answer
+    }
+
+//    println(solution(intArrayOf(2, 1, 3, 2), 2))
+    println(solution(intArrayOf(1, 1, 9, 1, 1, 1), 0))
+  }
+
+//  [2, 1, 3, 2]	2         	1
+//  [1, 1, 9, 1, 1, 1]	0	          5
+
+
+  @Test
+  fun stackTest5() {
+
+    fun solution(priorities: IntArray, location: Int): Int {
+
+      var myIndex = location
+      var answer = 0
+      var count = 0
+      val queue = LinkedList<Int>().apply {
+        priorities.forEach { offer(it) }
+      }
+
+      println(queue)
+
+      while (queue.isNotEmpty()) {
+        if (queue.all { it <= queue.peek() }) {
+          count++
+          if (0 == myIndex) {
+            answer = count
+            break
+          }
+          queue.poll()
+          myIndex -= 1
+        } else {
+          if (0 == myIndex)
+            myIndex = queue.size - 1
+          else {
+            myIndex -= 1
+          }
+          queue.offer(queue.poll())
+        }
+      }
+
+      return answer
+    }
+
+//    println(solution(intArrayOf(2, 1, 3, 2), 2))
+    println(solution(intArrayOf(1, 1, 9, 1, 1, 1), 0))
+  }
+
+  @Test
+  fun hashKey() {
+
+    fun solution(clothes: Array<Array<String>>): Int {
+
+      var count = 0
+      var arrayCount = 1
+      val list = clothes.map { Pair(it[0], it[1]) }.groupBy { it.second }
+      if (list.size > 1) list.forEach { arrayCount *= it.value.size }
+      list.forEach { count += it.value.size }
+
+      return if (list.size > 1) count + arrayCount else count
+    }
+
+    println(
+      solution(
+        arrayOf(
+          arrayOf("yellowhat", "headgear"),
+          arrayOf("bluesunglasses", "eyewear"),
+          arrayOf("green_turban", "headgear")
+        )
+      )
+    )
+    println(
+      solution(
+        arrayOf(
+          arrayOf("crowmask", "face"),
+          arrayOf("bluesunglasses", "face"),
+          arrayOf("smoky_makeup", "face")
+        )
+      )
+    )
+  }
+
+//  [["yellowhat", "headgear"], ["bluesunglasses", "eyewear"], ["green_turban", "headgear"]]	5
+//  [["crowmask", "face"], ["bluesunglasses", "face"], ["smoky_makeup", "face"]]	3
+//
+
+  @Test
+  fun sttest() {
+
+    fun solution(s: String) = s.replace("zero", "0")
+      .replace("one", "1")
+      .replace("two", "2")
+      .replace("three", "3")
+      .replace("four", "4")
+      .replace("five", "5")
+      .replace("six", "6")
+      .replace("seven", "7")
+      .replace("eight", "8")
+      .replace("nine", "9").toInt()
+
+    println(solution("one4seveneight"))
+    println(solution("23four5six7"))
+    println(solution("2three45sixseven"))
+    println(solution("123"))
+  }
+
+//  0	zero
+//  1	one
+//  2	two
+//  3	three
+//  4	four
+//  5	five
+//  6	six
+//  7	seven
+//  8	eight
+//  9	nine
+//
+//  "one4seveneight"	1478
+//  "23four5six7"	234567
+//  "2three45sixseven"	234567
+//  "123"	123
+
+  @Test
+  fun sttest2() {
+
+    fun solution(absolutes: IntArray, signs: BooleanArray) =
+      absolutes.mapIndexed { index, i -> if (signs[index]) i else -i }.sum()
+
+    println(solution(intArrayOf(4, 7, 12), booleanArrayOf(true, false, true)))
+    println(solution(intArrayOf(1, 2, 3), booleanArrayOf(false, false, true)))
+
+  }
+
+//  [4,7,12]	[true,false,true]	9
+//  [1,2,3]	[false,false,true]	0
+
+  @ExperimentalTime
+  @Test
+  fun sttest3() {
+
+    fun solution(n: Int): String {
+
+      val my = measureTime {
+        StringBuilder("").apply {
+          for (i in 0 until n) if (i % 2 == 0) append("수") else append("박")
+        }
+      }
+      val other = measureTime { String(CharArray(n) { i -> if (i % 2 == 0) '수' else '박' }) }
+      val other2 = measureTime { String(CharArray(n, { i -> if (i % 2 == 0) '수' else '박' })) }
+
+//      println("my : $my")
+//      println("other : $other")
+//      println("other : $other2")
+
+
+      return ""
+
+    }
+
+    println(solution(3))
+    println(solution(4))
+
+  }
+
+  @Test
+  fun sttest4() {
+
+    fun solution(x: Int, n: Int): LongArray {
+
+
+      var answer = longArrayOf()
+      return answer
+    }
+
+    println(solution(2, 5))
+    println(solution(4, 3))
+    println(solution(-4, 2))
+
+  }
+
+  @Test
+  fun sttest5() {
+
+    fun solution(n: Int, lost: IntArray, reserve: IntArray): Int {
+
+      val reserve2 = reserve.filter { !lost.contains(it) }.sorted().toMutableList()
+
+      println(reserve2)
+      println(lost.sorted())
+
+      val count = lost.sorted().count {
+        when {
+          reserve2.contains(it - 1) -> {
+            reserve2.remove(it - 1)
+          }
+          reserve2.contains(it + 1) -> {
+            reserve2.remove(it + 1)
+          }
+          else -> {
+            false
+          }
+        }
+      }
+
+      println(count)
+
+      return n - lost.size + lost.count { reserve.contains(it) } + count
+    }
+
+//       println(count)
+//       println(reserve.toList())
+//       lost.map { lostNumber -> reserve.any { it < lostNumber || it > lostNumber } }
+//      return 3
+
+//    solution(5, intArrayOf(2, 4), intArrayOf(1,3,5))
+//    println(solution(5, intArrayOf(2, 4), intArrayOf(1,3,5)))
+//    println(solution(5, intArrayOf(2, 4), intArrayOf(3)))
+//    println(solution(3, intArrayOf(3), intArrayOf(1)))
+//    println(solution(6, intArrayOf(1, 2, 4, 6), intArrayOf(1)))
+//    println(solution(6, intArrayOf(1, 2, 4, 6), intArrayOf(1,2,4)))
+    println(solution(5, intArrayOf(4, 3), intArrayOf(3, 2)))
+
+  }
+
+  //  5	[2, 4]	[1, 3, 5]	5
+//  5	[2, 4]	[3]	4
+//  3	[3]	[1]	2
+//  6 [2,3,5] [1,2,4,6] 6
+//
+  @Test
+  fun sttest6() {
+
+    fun solution(nums: IntArray) =
+
+      nums.mapIndexed { index1, i ->
+        var number = 0
+        nums.forEachIndexed { index2, j ->
+          nums.forEachIndexed { index3, k ->
+            if (index3 != index1 || index3 != index2 || index1 != index2) {
+              number = i + j + k
+            }
+          }
+        }
+      }.size
+
+    println(solution(intArrayOf(1, 2, 3, 4)))
+    println(solution(intArrayOf(1, 2, 7, 6, 4)))
+
+  }
+
+  // 1. 3개씩 더하는 연산
+  // 2. 소수 검사
+
+//  [1,2,3,4]	1
+//  [1,2,7,6,4]	4
+
+
+  @Test
+  fun collectionTest123123() {
+
+    val a = intArrayOf(1, 2, 3, 4, 5, 6, 7)
+    val b = intArrayOf(1, 2, 3, 4, 5, 6)
+
+    val c = a.toList()
+    val d = b.toList()
+
+    val e = c.toSet()
+    val f = d.toSet()
+
+    println((c - d))
+    println((e - f))
+
+    println((e + f))
+    println((e + f))
+
   }
 
   @Test
   fun reflectionTest() {
-    val intArray = intArrayOf(1,2,3,4,5,6,7,8,9)
+    val intArray = intArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
 //    println(intArray.filter { it. }.toList())
-    println(intArray.filter( ::isOdd ).toList())
+    println(intArray.filter(::isOdd).toList())
   }
 
   private fun isOdd(age: Int) = age % 2 == 0
-
 }
 
 open class Cook(var name: String, var time: Long) {

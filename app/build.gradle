@@ -95,11 +95,17 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:21.1.0'
 //    implementation 'com.google.firebase:firebase-crashlytics-ktx'
 
+    // multy
+    implementation("com.sun.mail:javax.mail:1.6.2")
 
     // Gson
     implementation "com.google.code.gson:gson:2.8.8"
 
     // WorkManager
 //    implementation "androidx.work:work-runtime-ktx:2.7.1"
+
+    // Zxing
+    implementation('com.journeyapps:zxing-android-embedded:4.3.0') { transitive = false }
+    implementation 'com.google.zxing:core:3.3.0'
 
 }
