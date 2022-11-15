@@ -1,17 +1,14 @@
 package com.js.testproject
 
-import android.util.Log
 import com.orhanobut.logger.Logger
-import kotlinx.coroutines.*
+import kotlinx.coroutines.async
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import org.junit.Test
-
-import org.junit.Assert.*
-import java.lang.Math.abs
-import java.lang.StringBuilder
 import java.math.BigDecimal
 import java.util.*
 import java.util.regex.Pattern
-import kotlin.collections.ArrayList
 import kotlin.time.ExperimentalTime
 import kotlin.time.measureTime
 
