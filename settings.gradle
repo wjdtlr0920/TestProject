@@ -1,3 +1,5 @@
 include ':app'
 rootProject.name = "TestProject"
 include ':fragmenttest'
+include ':composecamp2022_practice'
+include ':composecamp2022_practice_pathway_basic_layout_codelab'

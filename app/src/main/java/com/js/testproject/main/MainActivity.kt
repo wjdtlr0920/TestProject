@@ -24,35 +24,35 @@ import com.js.testproject.util.UtilActivity
 import com.js.testproject.viewtest.ViewTestActivity
 import com.js.testproject.xml.XmlTestActivity
 
-
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityMainBinding
+  private lateinit var binding: ActivityMainBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        val classList = arrayListOf<Class<*>>()
-        classList.add(NotificationActivity::class.java)
-        classList.add(ViewTestActivity::class.java)
-        classList.add(PermissionActivity::class.java)
-        classList.add(StackActivity::class.java)
-        classList.add(FileTestActivity::class.java)
-        classList.add(MediaStoreActivity::class.java)
-        classList.add(UtilActivity::class.java)
-        classList.add(LottoActivity::class.java)
-        classList.add(ResultActivity::class.java)
-        classList.add(CoroutineActivity::class.java)
-        classList.add(TestActivity::class.java)
-        classList.add(IntentActivity::class.java)
-        classList.add(FirebaseActivity::class.java)
-        classList.add(PretendCallActivity::class.java)
-        classList.add(XmlTestActivity::class.java)
-        classList.add(ComposeTestActivity::class.java)
-        classList.add(GuruCoinActivity::class.java)
+    val classList = arrayListOf<Class<*>>()
+    classList.add(NotificationActivity::class.java)
+    classList.add(ViewTestActivity::class.java)
+    classList.add(PermissionActivity::class.java)
+    classList.add(StackActivity::class.java)
+    classList.add(FileTestActivity::class.java)
+    classList.add(MediaStoreActivity::class.java)
+    classList.add(UtilActivity::class.java)
+    classList.add(LottoActivity::class.java)
+    classList.add(ResultActivity::class.java)
+    classList.add(CoroutineActivity::class.java)
+    classList.add(TestActivity::class.java)
+    classList.add(IntentActivity::class.java)
+    classList.add(FirebaseActivity::class.java)
+    classList.add(PretendCallActivity::class.java)
+    classList.add(XmlTestActivity::class.java)
+    classList.add(ComposeTestActivity::class.java)
+    classList.add(GuruCoinActivity::class.java)
 
-        binding.rvMain.adapter = ActivityOpenAdapter(this, classList)
+    binding.rvMain.adapter = ActivityOpenAdapter(this, classList)
 
-    }
+  }
+
 }

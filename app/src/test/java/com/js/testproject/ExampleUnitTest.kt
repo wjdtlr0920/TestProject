@@ -1607,6 +1607,8 @@ class ExampleUnitTest {
   }
 
   private fun isOdd(age: Int) = age % 2 == 0
+
+  lateinit var bvbb: String
 }
 
 open class Cook(var name: String, var time: Long) {

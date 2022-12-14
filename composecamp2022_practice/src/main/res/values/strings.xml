@@ -1,0 +1,8 @@
+<resources>
+  <string name="app_name">ComposeCamp2022_Practice_Pathway_Basics_Codelab</string>
+  <string name="my_list_view_title">Hello,</string>
+  <string name="my_list_view_test">My List View</string>
+  <string name="block_info">Welcome to the Basics Codelabe!</string>
+  <string name="block_button">Continue</string>
+  <string name="show_less">Show Less</string>
+</resources>
